@@ -1,0 +1,1 @@
+double gauss();		/* Gaussian number, <x> = 0, sigma = 1 */

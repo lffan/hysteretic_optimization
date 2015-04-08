@@ -4,67 +4,41 @@
 #include <malloc.h>
 #include "glassSK.h"
 #include "r1279.h"
+#include "gaussian.h"
 
-GLASS create_spins(){
-	/* Create spin glass */
+GLASS_SK init_sys(){
+	/* Initialize the SK system */
+
+	GLASS_SK sys;
+	sys.N = SIZE;
+	sys.H = H1;
+
 	int i, j;
-
-	GLASS sys;
-	sys.L = SIZE;
-	sys.N = SIZE*SIZE;
-	sys.temperature = 0;
-	
-	/* Initialize the neighbor table */
+	/* Initialize sys.sigma, sys.J, sys.xi*/
 	for(i = 0; i < sys.N; i++){
-		sys.spins[i] = 1;
-		sys.nb[i][0] = (i+sys.L-1)%sys.L + (int)(i/sys.L)*sys.L;
-		sys.nb[i][1] = (i+1)%sys.L + (int)(i/sys.L)*sys.L;
-		sys.nb[i][2] = (i-sys.L+sys.N)%sys.N;
-		sys.nb[i][3] = (i+sys.L)%sys.N;
-	}
-	/* Initialize the J table */
-	for(i = 0; i < sys.N; i++){
-		if(r1279() <= 0.5)
-			sys.J[i][0] = sys.J[sys.nb[i][0]][1] = 1;
-		else
-			sys.J[i][0] = sys.J[sys.nb[i][0]][1] = -1;
-		if(r1279() <= 0.5)
-			sys.J[i][2] = sys.J[sys.nb[i][2]][3] = 1;
-		else
-			sys.J[i][2] = sys.J[sys.nb[i][2]][3] = -1;
+		sys.sigma[i] = 1;
+		sys.J[i][i] = 0;
+		sys.xi[i] = ir1279()%2 * 2 - 1;
+		for(j = 0; j < i; j++)
+			sys.J[i][j] = sys.J[j][i] = gauss();
 	}
 
-
-	/* Initial energy and magnetization */
-	sys.magnetization = sys.N;
+	/* Initialize sys.h, sys.energy, sys.magnetization*/
 	sys.energy = 0;
+	sys.magnetization = 0;
 	for(i = 0; i < sys.N; i++){
-		sys.energy += sys.J[i][0] * sys.spins[i] * sys.spins[sys.nb[i][0]];
-		sys.energy += sys.J[i][2] * sys.spins[i] * sys.spins[sys.nb[i][2]];
+		sys.h[i] = sys.H * sys.xi[i];
+		sys.energy += - sys.H * sys.xi[i] * sys.sigma[i];
+		sys.magnetization += sys.xi[i] * sys.sigma[i];
+		for(j = 0; j < sys.N; j++){
+			sys.h[i] += sys.J[i][j] * sys.sigma[j];
+			sys.energy += - 0.5 * sys.J[i][j] * sys.sigma[i] * sys.sigma[j];
+		}
 	}
-	
+
 	return sys;
 }
 
-void update_spin(GLASS *sys){
-	/* update one spin randomly */
-	int s = ir1279range(0, sys->N - 1);
-	int delta = 0;
-
+void update_h(GLASS_SK * sys, int s){
 	int i, j;
-	for(i = 0; i < 4; i++){
-		delta += 2*sys->J[s][i]*sys->spins[s]*sys->spins[sys->nb[s][i]];
-	}
-	if(r1279() < exp(-1.0*delta/sys->temperature)){
-		sys->spins[s] = - sys->spins[s];
-		sys->energy += delta;
-		sys->magnetization += 2 * sys->spins[s];
-	}
-}
-
-void sweep(GLASS *sys){
-	/* update all the spins */
-	int i;
-	for(i = 0; i < sys->N; i++)
-		update_spin(sys);
 }

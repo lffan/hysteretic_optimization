@@ -1,14 +1,16 @@
 #define SIZE 8
+#define H1 6
 
 typedef struct{
 	int N;
-	double spins[SIZE];
+	int sigma[SIZE];
 	double J[SIZE][SIZE];
-	double xi[SIZE];
 	double energy;
 	double magnetization;
-}GLASS;
 
-GLASS create_spins();
-void update_spin(GLASS *);
-void sweep(GLASS *);
+	double H;
+	int xi[SIZE];
+	double h[SIZE];
+}GLASS_SK;
+
+GLASS_SK init_sys();

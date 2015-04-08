@@ -1,5 +1,5 @@
 #define SIZE 8
-#define H1 6
+#define H1 1
 
 typedef struct{
 	int N;
@@ -11,6 +11,11 @@ typedef struct{
 	double H;
 	int xi[SIZE];
 	double h[SIZE];
+
+	int unstable[SIZE];
+	int unstable_num;
 }GLASS_SK;
 
 GLASS_SK init_sys();
+void identify_unstable(GLASS_SK *);
+void print_system_status(GLASS_SK *sys);

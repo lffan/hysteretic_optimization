@@ -7,15 +7,15 @@
 #include "gaussian.h"
 
 GLASS_SK init_sys(){
-	// Initialize the Sherrington-Kirkpatrick spin glass system
-	// Return an initialized GLASS_SK structure
+	// Initialize the Sherrington-Kirkpatrick spin glass system.
+	// Return an initialized GLASS_SK structure.
 
 	GLASS_SK sys;
 	sys.N = SIZE;
 	sys.H = H1;		/* external field */
 
 	int i, j;
-	/* Initialize sys.sigma, sys.J, sys.xi*/
+	/* Initialize sys.sigma, sys.J, sys.xi */
 	for(i = 0; i < sys.N; i++){
 		sys.sigma[i] = 1;
 		sys.xi[i] = ir1279()%2 * 2 - 1;
@@ -29,7 +29,6 @@ GLASS_SK init_sys(){
 	sys.magnetization = 0;
 	for(i = 0; i < sys.N; i++){
 		sys.h[i] = sys.H * sys.xi[i];
-		sys.energy += - sys.H * sys.xi[i] * sys.sigma[i];
 		sys.magnetization += sys.xi[i] * sys.sigma[i];
 		for(j = 0; j < sys.N; j++){
 			sys.h[i] += sys.J[i][j] * sys.sigma[j];
@@ -38,10 +37,10 @@ GLASS_SK init_sys(){
 	}
 
 	/* Initialize unstable spins */
-	for(i = 0; i < sys.N; i++){
-		sys.unstable[i] = -1;
-	}
-	sys.unstable_num = 0;
+		for(i = 0; i < sys.N; i++){
+			sys.unstable[i] = -1;
+		}
+		sys.unstable_num = sys.N;
 
 	return sys;
 }
@@ -49,7 +48,7 @@ GLASS_SK init_sys(){
 void identify_unstable(GLASS_SK *sys){
 	// Identity unstable spins,
 	// then store their indics in sys.flags[],
-	// and store the number of unstable spins in sys.unstable_num
+	// and store the number of unstable spins in sys.unstable_num.
 	
 	int i;
 	sys->unstable_num = 0;
@@ -58,6 +57,38 @@ void identify_unstable(GLASS_SK *sys){
 			sys->unstable[sys->unstable_num] = i;
 			sys->unstable_num += 1;
 		}
+	}
+	for(i = sys->unstable_num; i < sys->N; i++){
+		sys->unstable[i] = -1;
+	}
+}
+
+void update_en_mag(GLASS_SK *sys, int s){
+	// Assume s the index of a flipped spin.
+	// Update the spin, energy, magnetization, and the local field,
+	// that is to say, sys.sigma[], sys.energy, sys.magnetization, and sys.h[]
+	int i;
+	sys->sigma[s] = - sys->sigma[s];
+	sys->magnetization += 2 * sys->xi[s] * sys->sigma[s];
+	sys->energy -= 2 * sys->h[i] * sys->sigma[s];
+	for(i = 0; i < sys->N; i++){
+		sys->h[i] += 2 * sys->J[i][s] * sys->sigma[i] * sys->sigma[s];
+	}
+}
+
+void quench(GLASS_SK *sys){
+	// Indentify all the unstable spins, then randomly flip one of them.
+	// Update the system after the flipping.
+	// Repeat untill all the spins are stable.
+
+	int i = 0 , s;
+	identify_unstable(sys);
+	while(sys->unstable_num > 0){
+		s = ir1279()%sys->unstable_num;
+		update_en_mag(sys, sys->unstable[s]);
+		identify_unstable(sys);
+		printf("Number of unstable spins:%d\n", sys->unstable_num);
+		i++;
 	}
 }
 
@@ -79,7 +110,7 @@ void print_system_status(GLASS_SK *sys){
 	// 	printf("\n");	
 	// }
 	printf("\nEneryg\t\tMagnetization\n");
-	printf("%f\t%f\n", sys->energy, sys->magnetization);
+	printf("%f\t%f\n", sys->energy/sys->N, sys->magnetization/sys->N);
 
 	/* Test teh indentify_unstable*/
 	identify_unstable(sys);
@@ -89,17 +120,3 @@ void print_system_status(GLASS_SK *sys){
 	}
 	printf("Number of unstable spins: %d\n", sys->unstable_num);
 }
-
-void update_en_mag(GLASS_SK *sys, int s){
-	// Assume s the index of a flipped spin
-	// Update the spin, energy, magnetization, and the local field,
-	// that is to say, sys.sigma[], sys.energy, sys.magnetization, and sys.h[]
-	int i;
-	sys->sigma[s] = - sys->sigma[s];
-	sys->magnetization += 2 * sys->xi[s] * sys->sigma[s];
-	for(i = 0; i < sys->N; i++){
-		sys->h[i] += 2 * sys->sigma[i] * sys->sigma[s];
-	}
-}
-
-

@@ -1,36 +1,2861 @@
 Number	Field
-8	6.000000
+500	0.250000
 
 sigma	xi	h
-1	-1	5.576567
-1	-1	5.157999
-1	1	-5.955838
-1	1	-5.995591
-1	-1	5.157001
-1	-1	5.105305
-1	-1	5.362781
-1	-1	6.565329
-
-J[i][j]:
-0.000000	0.219772	0.363536	-0.853966	0.247474	0.059111	0.168543	0.218962	
-0.219772	0.000000	0.310530	-0.060292	-0.160524	0.469533	0.033544	0.029437	
-0.363536	0.310530	0.000000	0.071190	0.082287	0.208507	-0.370518	-0.709695	
--0.853966	-0.060292	0.071190	0.000000	0.483339	-0.069218	-0.014531	0.439068	
-0.247474	-0.160524	0.082287	0.483339	0.000000	0.029318	0.605650	-0.444545	
-0.059111	0.469533	0.208507	-0.069218	0.029318	0.000000	0.255266	-0.057823	
-0.168543	0.033544	-0.370518	-0.014531	0.605650	0.255266	0.000000	-0.040734	
-0.218962	0.029437	-0.709695	0.439068	-0.444545	-0.057823	-0.040734	0.000000	
+1	1	0.823323
+1	1	0.802843
+1	1	-1.640600
+1	-1	-1.029414
+1	1	0.293877
+1	1	-2.799533
+1	-1	-0.987154
+1	-1	0.349499
+1	1	0.707499
+1	1	-0.709339
+1	1	1.142388
+1	-1	-0.319035
+1	1	2.157004
+1	-1	0.678561
+1	-1	-0.287081
+1	1	-0.314611
+1	1	1.582508
+1	-1	0.861852
+1	-1	0.213769
+1	-1	-0.122149
+1	1	0.991372
+1	1	0.457349
+1	-1	-1.816772
+1	-1	0.304182
+1	1	1.099295
+1	1	0.704121
+1	-1	0.269879
+1	-1	-1.590141
+1	1	-1.496273
+1	-1	-0.848070
+1	-1	-0.505825
+1	-1	0.198080
+1	1	-0.292631
+1	1	0.066421
+1	-1	-0.342270
+1	1	-1.585511
+1	1	0.636774
+1	1	0.655869
+1	1	0.516430
+1	1	1.062244
+1	1	0.171325
+1	-1	0.456822
+1	1	1.606913
+1	-1	-0.586060
+1	-1	-0.822329
+1	1	-0.573841
+1	1	0.362108
+1	1	0.665280
+1	1	-1.074901
+1	1	-0.157866
+1	-1	-0.949832
+1	-1	0.035410
+1	1	-1.437051
+1	1	-0.096016
+1	1	1.355158
+1	-1	-1.820296
+1	1	-1.554837
+1	1	0.184158
+1	-1	0.860109
+1	1	0.077913
+1	1	1.149034
+1	1	2.447240
+1	-1	0.205795
+1	1	0.746215
+1	-1	1.201583
+1	1	-0.535787
+1	1	0.002937
+1	-1	-1.749444
+1	1	0.790019
+1	-1	0.805773
+1	-1	-0.651064
+1	-1	0.093978
+1	-1	-0.415635
+1	-1	-0.407056
+1	-1	-2.392222
+1	-1	-1.936018
+1	-1	1.234504
+1	-1	0.113956
+1	1	-0.487239
+1	-1	0.220676
+1	-1	0.017778
+1	-1	-1.238283
+1	-1	-0.770357
+1	-1	-0.019414
+1	-1	-2.573052
+1	1	-0.548546
+1	-1	-0.592721
+1	-1	-0.833878
+1	1	-0.038442
+1	1	-1.184440
+1	-1	-2.394097
+1	-1	0.257132
+1	-1	-0.320607
+1	-1	-0.648778
+1	-1	-0.038682
+1	1	-0.192744
+1	1	0.814415
+1	1	0.238828
+1	-1	-1.645413
+1	-1	-0.853916
+1	1	-1.619895
+1	1	-0.187413
+1	-1	-0.071311
+1	1	-0.655276
+1	1	0.607487
+1	-1	0.028466
+1	-1	-0.378983
+1	1	-0.433307
+1	-1	-1.243067
+1	1	-1.376397
+1	-1	-0.166159
+1	1	-0.702072
+1	-1	-1.639955
+1	-1	-0.588011
+1	1	-0.934444
+1	1	-0.495560
+1	1	0.458499
+1	1	0.564609
+1	-1	-0.780687
+1	1	-0.166083
+1	-1	-0.671393
+1	-1	0.087521
+1	-1	-1.517548
+1	1	1.163667
+1	-1	0.308658
+1	-1	0.272330
+1	-1	0.786953
+1	-1	-1.737549
+1	-1	-0.202382
+1	-1	0.407144
+1	-1	-0.309083
+1	-1	0.278117
+1	1	-1.092085
+1	-1	-0.089493
+1	-1	-0.827434
+1	1	2.039420
+1	-1	1.397092
+1	-1	-0.048082
+1	1	-1.418009
+1	1	1.195829
+1	-1	-0.874754
+1	1	2.037993
+1	-1	0.372300
+1	-1	0.865892
+1	-1	-0.159355
+1	-1	-0.202284
+1	-1	-1.265969
+1	-1	-0.607621
+1	1	0.323494
+1	-1	0.097121
+1	1	1.060996
+1	-1	-1.233202
+1	1	1.052691
+1	1	-0.812712
+1	-1	0.753819
+1	1	-0.508022
+1	-1	-0.759004
+1	-1	-1.394081
+1	-1	0.517831
+1	-1	-2.144336
+1	-1	1.277120
+1	-1	-0.748887
+1	1	0.177169
+1	-1	0.044669
+1	-1	2.166656
+1	-1	-0.911270
+1	1	-0.181223
+1	1	-0.846584
+1	-1	-0.783375
+1	-1	1.441588
+1	1	0.055812
+1	1	-0.790182
+1	-1	-0.105816
+1	1	-1.102978
+1	-1	-0.194756
+1	1	1.129533
+1	-1	-1.187060
+1	-1	-2.036533
+1	1	0.129215
+1	1	0.348344
+1	1	0.697325
+1	1	0.622854
+1	1	0.310843
+1	1	-0.717996
+1	1	-0.338380
+1	1	0.876926
+1	-1	0.378477
+1	1	-1.265120
+1	1	-0.207736
+1	-1	-0.174144
+1	1	-1.443529
+1	1	0.753602
+1	1	0.097906
+1	1	0.134276
+1	1	0.822602
+1	1	-0.279962
+1	-1	1.362444
+1	1	0.741862
+1	-1	0.160909
+1	-1	-1.177476
+1	1	0.677316
+1	1	0.959549
+1	1	0.903896
+1	-1	-1.507816
+1	-1	-0.365852
+1	-1	-1.939333
+1	-1	-0.614873
+1	-1	-0.552805
+1	1	-1.410067
+1	-1	-2.446504
+1	1	1.885023
+1	-1	-1.507566
+1	-1	0.253954
+1	1	2.058181
+1	1	0.861288
+1	-1	-0.271739
+1	1	0.361262
+1	-1	-0.810425
+1	1	-1.027207
+1	1	0.725213
+1	1	2.451183
+1	-1	0.894430
+1	-1	0.782820
+1	-1	-0.045226
+1	1	1.327590
+1	1	-1.659251
+1	-1	-0.676683
+1	-1	0.789669
+1	-1	-0.460881
+1	-1	-1.683990
+1	1	-0.538502
+1	-1	-1.212625
+1	-1	-1.921029
+1	1	-0.495571
+1	-1	-1.059053
+1	1	-0.174678
+1	-1	0.558202
+1	1	1.389113
+1	-1	-0.392444
+1	1	0.140714
+1	1	-1.154463
+1	-1	-1.239582
+1	-1	-0.804061
+1	1	0.955352
+1	-1	1.477456
+1	1	1.937493
+1	1	0.604717
+1	-1	-0.215847
+1	1	-0.007798
+1	1	0.241998
+1	1	-0.762710
+1	1	0.592780
+1	1	1.245394
+1	1	-1.118474
+1	-1	-0.127445
+1	1	0.488374
+1	-1	-0.813718
+1	-1	0.282776
+1	1	0.047689
+1	-1	-1.209123
+1	-1	-1.179454
+1	1	0.352247
+1	-1	-1.265828
+1	-1	-0.523666
+1	1	0.610706
+1	-1	-0.634036
+1	1	-1.691758
+1	1	-0.157282
+1	1	-0.154910
+1	1	0.005567
+1	-1	0.220659
+1	1	0.195242
+1	-1	-0.913850
+1	1	0.443111
+1	1	0.845377
+1	1	1.052987
+1	1	-0.360795
+1	1	-0.445053
+1	1	1.160235
+1	1	0.229018
+1	1	0.115803
+1	-1	0.859844
+1	1	1.191427
+1	1	0.565099
+1	1	-1.037439
+1	-1	-0.600647
+1	-1	-0.153221
+1	1	-1.380325
+1	1	0.646557
+1	1	0.849208
+1	1	-0.043974
+1	1	1.419396
+1	1	0.837429
+1	-1	-0.078054
+1	1	0.871885
+1	1	1.688336
+1	1	0.629839
+1	1	0.815912
+1	-1	-0.304899
+1	-1	-2.416852
+1	1	-0.236736
+1	1	0.933658
+1	1	1.341093
+1	-1	-0.241290
+1	1	-0.383005
+1	1	-0.737894
+1	1	-0.535815
+1	1	-0.354980
+1	-1	0.015851
+1	1	-0.149624
+1	1	-0.108442
+1	1	1.336159
+1	1	-0.440905
+1	-1	1.737209
+1	-1	-0.568589
+1	1	0.103121
+1	-1	0.043871
+1	-1	0.609828
+1	-1	-0.931075
+1	1	1.507702
+1	-1	-0.889007
+1	-1	0.242287
+1	-1	-0.761050
+1	1	-0.682718
+1	1	1.546048
+1	1	0.842042
+1	-1	-0.297587
+1	1	0.276753
+1	1	-0.272731
+1	-1	-1.377338
+1	-1	1.172018
+1	-1	0.285254
+1	-1	0.419341
+1	1	-0.935047
+1	1	-2.440090
+1	-1	-0.577424
+1	1	0.221420
+1	1	-0.093570
+1	1	-0.925278
+1	1	1.469218
+1	-1	0.780635
+1	1	-0.570906
+1	1	0.933717
+1	1	-1.592852
+1	-1	0.126914
+1	-1	-0.475069
+1	1	-0.285374
+1	-1	-0.139268
+1	1	-1.036648
+1	-1	-0.803619
+1	-1	-0.559937
+1	-1	1.322775
+1	-1	0.543406
+1	1	-2.048639
+1	1	-1.218872
+1	1	-1.408891
+1	-1	-0.851578
+1	-1	-0.395197
+1	1	0.512470
+1	-1	-0.689432
+1	-1	-2.403520
+1	1	0.617796
+1	-1	-1.102464
+1	-1	0.301667
+1	1	-0.457780
+1	1	-0.416845
+1	1	0.137268
+1	-1	0.658964
+1	-1	0.028750
+1	-1	-1.097827
+1	1	-0.775105
+1	1	0.290855
+1	-1	-0.011150
+1	1	0.089852
+1	1	-0.205099
+1	1	1.090153
+1	1	0.043265
+1	1	-0.457505
+1	-1	1.119838
+1	-1	-0.100863
+1	1	-0.644788
+1	1	0.486260
+1	-1	-0.716913
+1	-1	-0.037156
+1	-1	-0.612032
+1	-1	-1.633245
+1	1	0.179815
+1	-1	-1.483322
+1	-1	1.065083
+1	1	0.772923
+1	-1	-0.025516
+1	-1	1.471651
+1	-1	-0.267464
+1	1	-1.745163
+1	1	0.609678
+1	1	-0.610131
+1	1	0.413579
+1	-1	-1.156518
+1	1	0.218394
+1	1	0.355276
+1	1	-1.430938
+1	-1	1.182082
+1	1	0.942228
+1	1	-0.260534
+1	-1	0.522770
+1	-1	0.270086
+1	-1	-0.044124
+1	-1	-2.694674
+1	1	-0.799958
+1	-1	-0.678256
+1	1	-0.500580
+1	-1	-1.379038
+1	-1	0.060033
+1	1	-0.571477
+1	-1	0.310123
+1	-1	-0.826073
+1	1	-0.668882
+1	1	2.042578
+1	1	-0.967588
+1	-1	-1.368400
+1	-1	0.772719
+1	1	-2.379314
+1	-1	2.315544
+1	1	-0.410055
+1	1	-1.522690
+1	1	-0.390515
+1	-1	0.533554
+1	-1	0.453401
+1	1	-1.015217
+1	1	-0.900311
+1	1	1.084763
+1	-1	0.972903
+1	1	0.513468
+1	1	1.993744
+1	1	0.108001
+1	-1	-1.093161
+1	-1	-0.462297
+1	1	0.743609
+1	-1	-0.183838
+1	-1	-1.583878
+1	-1	-0.543727
+1	1	1.035953
+1	-1	0.321210
+1	1	-0.955915
+1	1	-1.129469
+1	-1	0.603947
+1	1	-1.258370
+1	-1	-1.560262
+1	-1	-0.107076
+1	-1	1.203134
+1	1	2.584070
+1	1	0.887607
+1	-1	-0.819659
+1	-1	-0.487878
+1	-1	-1.257658
+1	-1	0.056145
+1	-1	-1.351341
+1	-1	0.170719
+1	-1	-1.608397
+1	1	2.048562
+1	1	0.972674
+1	-1	0.833005
+1	-1	-1.646635
+1	1	0.317020
+1	-1	-1.723250
+1	-1	-1.111740
+1	1	-0.837316
+1	-1	-0.449637
+1	-1	0.314492
+1	-1	-1.031012
+1	1	-0.750647
+1	1	1.364552
+1	1	0.289646
+1	-1	-2.210083
+1	1	0.673501
+1	1	0.065879
+1	-1	-1.458229
+1	-1	0.437966
+1	-1	0.724587
+1	1	1.235019
+1	1	0.624072
+1	-1	0.657693
+1	-1	-1.133543
+1	1	-0.101935
+1	-1	1.553623
+1	1	0.037516
+1	1	0.661451
+1	1	-1.489268
+1	-1	1.136648
+1	1	-0.078248
+1	-1	0.598492
+1	1	-0.416827
+1	-1	-0.837190
+1	1	0.958643
+1	1	-0.792119
+1	1	-1.781858
+1	-1	-0.823013
+1	1	2.075444
+1	1	0.229674
+1	1	-0.087096
 
 Eneryg		Magnetization
-22.486777	-4.000000
+0.061685	0.028000
 
 Unstable spins:
 2
 3
+5
+6
+9
+11
+14
+15
+19
+22
+27
+28
+29
+30
+32
+34
+35
+43
+44
+45
+48
+49
+50
+52
+53
+55
+56
+65
+67
+70
+72
+73
+74
+75
+78
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+92
+93
+94
+95
+98
+99
+100
+101
+102
+103
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+118
+119
+120
+122
+127
+128
+130
+132
+133
+134
+137
+138
+140
+144
+145
+146
+147
+151
+153
+155
+156
+157
+159
+161
+165
+166
+167
+168
+171
+172
+173
+174
+176
+177
+183
+184
+187
+188
+189
+190
+195
+199
+203
+204
+205
+206
+207
+208
+209
+211
+215
+217
+218
+223
+225
+226
+228
+229
+230
+231
+232
+233
+234
+235
+238
+240
+241
+242
+247
+248
+250
+253
+254
+256
+259
+260
+262
+263
+265
+266
+267
+268
+272
+276
+277
+284
+285
+286
+287
+290
+293
+298
+299
+300
+303
+304
+305
+306
+307
+309
+310
+312
+314
+318
+320
+322
+323
+326
+328
+329
+333
+334
+335
+337
+338
+341
+343
+345
+346
+347
+348
+349
+350
+353
+354
+355
+356
+357
+359
+360
+362
+364
+365
+369
+370
+372
+374
+377
+379
+380
+382
+383
+384
+385
+387
+390
+392
+393
+395
+397
+400
+403
+406
+407
+408
+409
+410
+411
+413
+415
+416
+418
+419
+421
+423
+424
+425
+428
+429
+435
+436
+438
+439
+440
+443
+444
+446
+447
+448
+452
+453
+454
+456
+458
+462
+464
+465
+466
+467
+469
+470
+473
+476
+482
+483
+487
+489
+491
+492
+494
+495
+496
+499
 -1
 -1
 -1
 -1
 -1
 -1
-Number of unstable spins: 2
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+Number of unstable spins: 268
+
+## Quench once:
+
+Number of unstable spins:271
+Number of unstable spins:274
+Number of unstable spins:269
+Number of unstable spins:273
+Number of unstable spins:266
+Number of unstable spins:263
+Number of unstable spins:260
+Number of unstable spins:258
+Number of unstable spins:262
+Number of unstable spins:251
+Number of unstable spins:250
+Number of unstable spins:251
+Number of unstable spins:248
+Number of unstable spins:247
+Number of unstable spins:247
+Number of unstable spins:243
+Number of unstable spins:238
+Number of unstable spins:241
+Number of unstable spins:241
+Number of unstable spins:238
+Number of unstable spins:245
+Number of unstable spins:245
+Number of unstable spins:240
+Number of unstable spins:237
+Number of unstable spins:232
+Number of unstable spins:238
+Number of unstable spins:229
+Number of unstable spins:235
+Number of unstable spins:231
+Number of unstable spins:232
+Number of unstable spins:231
+Number of unstable spins:229
+Number of unstable spins:225
+Number of unstable spins:220
+Number of unstable spins:218
+Number of unstable spins:212
+Number of unstable spins:217
+Number of unstable spins:215
+Number of unstable spins:213
+Number of unstable spins:216
+Number of unstable spins:209
+Number of unstable spins:207
+Number of unstable spins:209
+Number of unstable spins:204
+Number of unstable spins:207
+Number of unstable spins:210
+Number of unstable spins:204
+Number of unstable spins:197
+Number of unstable spins:196
+Number of unstable spins:197
+Number of unstable spins:192
+Number of unstable spins:189
+Number of unstable spins:187
+Number of unstable spins:188
+Number of unstable spins:186
+Number of unstable spins:188
+Number of unstable spins:191
+Number of unstable spins:190
+Number of unstable spins:189
+Number of unstable spins:187
+Number of unstable spins:189
+Number of unstable spins:189
+Number of unstable spins:184
+Number of unstable spins:188
+Number of unstable spins:184
+Number of unstable spins:182
+Number of unstable spins:184
+Number of unstable spins:179
+Number of unstable spins:177
+Number of unstable spins:173
+Number of unstable spins:175
+Number of unstable spins:175
+Number of unstable spins:174
+Number of unstable spins:173
+Number of unstable spins:167
+Number of unstable spins:170
+Number of unstable spins:173
+Number of unstable spins:168
+Number of unstable spins:171
+Number of unstable spins:165
+Number of unstable spins:172
+Number of unstable spins:171
+Number of unstable spins:170
+Number of unstable spins:169
+Number of unstable spins:167
+Number of unstable spins:161
+Number of unstable spins:162
+Number of unstable spins:163
+Number of unstable spins:156
+Number of unstable spins:154
+Number of unstable spins:158
+Number of unstable spins:158
+Number of unstable spins:154
+Number of unstable spins:150
+Number of unstable spins:150
+Number of unstable spins:144
+Number of unstable spins:142
+Number of unstable spins:141
+Number of unstable spins:134
+Number of unstable spins:132
+Number of unstable spins:131
+Number of unstable spins:123
+Number of unstable spins:125
+Number of unstable spins:127
+Number of unstable spins:126
+Number of unstable spins:125
+Number of unstable spins:122
+Number of unstable spins:121
+Number of unstable spins:121
+Number of unstable spins:125
+Number of unstable spins:124
+Number of unstable spins:124
+Number of unstable spins:127
+Number of unstable spins:123
+Number of unstable spins:127
+Number of unstable spins:123
+Number of unstable spins:124
+Number of unstable spins:124
+Number of unstable spins:119
+Number of unstable spins:118
+Number of unstable spins:123
+Number of unstable spins:119
+Number of unstable spins:121
+Number of unstable spins:121
+Number of unstable spins:128
+Number of unstable spins:123
+Number of unstable spins:121
+Number of unstable spins:121
+Number of unstable spins:125
+Number of unstable spins:123
+Number of unstable spins:126
+Number of unstable spins:124
+Number of unstable spins:123
+Number of unstable spins:118
+Number of unstable spins:117
+Number of unstable spins:115
+Number of unstable spins:113
+Number of unstable spins:117
+Number of unstable spins:118
+Number of unstable spins:111
+Number of unstable spins:112
+Number of unstable spins:113
+Number of unstable spins:116
+Number of unstable spins:113
+Number of unstable spins:114
+Number of unstable spins:111
+Number of unstable spins:107
+Number of unstable spins:105
+Number of unstable spins:107
+Number of unstable spins:102
+Number of unstable spins:103
+Number of unstable spins:106
+Number of unstable spins:103
+Number of unstable spins:104
+Number of unstable spins:107
+Number of unstable spins:112
+Number of unstable spins:110
+Number of unstable spins:103
+Number of unstable spins:104
+Number of unstable spins:105
+Number of unstable spins:105
+Number of unstable spins:105
+Number of unstable spins:101
+Number of unstable spins:97
+Number of unstable spins:96
+Number of unstable spins:97
+Number of unstable spins:99
+Number of unstable spins:97
+Number of unstable spins:96
+Number of unstable spins:100
+Number of unstable spins:98
+Number of unstable spins:96
+Number of unstable spins:101
+Number of unstable spins:98
+Number of unstable spins:96
+Number of unstable spins:98
+Number of unstable spins:98
+Number of unstable spins:92
+Number of unstable spins:96
+Number of unstable spins:95
+Number of unstable spins:94
+Number of unstable spins:95
+Number of unstable spins:97
+Number of unstable spins:92
+Number of unstable spins:90
+Number of unstable spins:88
+Number of unstable spins:87
+Number of unstable spins:88
+Number of unstable spins:90
+Number of unstable spins:90
+Number of unstable spins:88
+Number of unstable spins:87
+Number of unstable spins:86
+Number of unstable spins:91
+Number of unstable spins:90
+Number of unstable spins:93
+Number of unstable spins:95
+Number of unstable spins:93
+Number of unstable spins:90
+Number of unstable spins:88
+Number of unstable spins:88
+Number of unstable spins:90
+Number of unstable spins:84
+Number of unstable spins:90
+Number of unstable spins:85
+Number of unstable spins:82
+Number of unstable spins:83
+Number of unstable spins:83
+Number of unstable spins:87
+Number of unstable spins:86
+Number of unstable spins:91
+Number of unstable spins:90
+Number of unstable spins:84
+Number of unstable spins:86
+Number of unstable spins:86
+Number of unstable spins:86
+Number of unstable spins:86
+Number of unstable spins:81
+Number of unstable spins:82
+Number of unstable spins:88
+Number of unstable spins:85
+Number of unstable spins:87
+Number of unstable spins:85
+Number of unstable spins:81
+Number of unstable spins:86
+Number of unstable spins:88
+Number of unstable spins:90
+Number of unstable spins:91
+Number of unstable spins:84
+Number of unstable spins:90
+Number of unstable spins:84
+Number of unstable spins:83
+Number of unstable spins:85
+Number of unstable spins:84
+Number of unstable spins:82
+Number of unstable spins:84
+Number of unstable spins:82
+Number of unstable spins:77
+Number of unstable spins:76
+Number of unstable spins:74
+Number of unstable spins:75
+Number of unstable spins:74
+Number of unstable spins:73
+Number of unstable spins:75
+Number of unstable spins:77
+Number of unstable spins:73
+Number of unstable spins:73
+Number of unstable spins:70
+Number of unstable spins:71
+Number of unstable spins:69
+Number of unstable spins:68
+Number of unstable spins:66
+Number of unstable spins:67
+Number of unstable spins:70
+Number of unstable spins:69
+Number of unstable spins:72
+Number of unstable spins:71
+Number of unstable spins:72
+Number of unstable spins:68
+Number of unstable spins:71
+Number of unstable spins:67
+Number of unstable spins:68
+Number of unstable spins:69
+Number of unstable spins:66
+Number of unstable spins:65
+Number of unstable spins:66
+Number of unstable spins:64
+Number of unstable spins:64
+Number of unstable spins:61
+Number of unstable spins:60
+Number of unstable spins:56
+Number of unstable spins:55
+Number of unstable spins:57
+Number of unstable spins:67
+Number of unstable spins:67
+Number of unstable spins:64
+Number of unstable spins:67
+Number of unstable spins:68
+Number of unstable spins:73
+Number of unstable spins:77
+Number of unstable spins:71
+Number of unstable spins:68
+Number of unstable spins:64
+Number of unstable spins:61
+Number of unstable spins:64
+Number of unstable spins:61
+Number of unstable spins:59
+Number of unstable spins:59
+Number of unstable spins:64
+Number of unstable spins:63
+Number of unstable spins:66
+Number of unstable spins:64
+Number of unstable spins:67
+Number of unstable spins:65
+Number of unstable spins:63
+Number of unstable spins:63
+Number of unstable spins:62
+Number of unstable spins:65
+Number of unstable spins:67
+Number of unstable spins:65
+Number of unstable spins:60
+Number of unstable spins:58
+Number of unstable spins:59
+Number of unstable spins:59
+Number of unstable spins:61
+Number of unstable spins:67
+Number of unstable spins:68
+Number of unstable spins:64
+Number of unstable spins:63
+Number of unstable spins:61
+Number of unstable spins:60
+Number of unstable spins:61
+Number of unstable spins:64
+Number of unstable spins:65
+Number of unstable spins:66
+Number of unstable spins:62
+Number of unstable spins:66
+Number of unstable spins:64
+Number of unstable spins:63
+Number of unstable spins:62
+Number of unstable spins:59
+Number of unstable spins:57
+Number of unstable spins:57
+Number of unstable spins:59
+Number of unstable spins:58
+Number of unstable spins:60
+Number of unstable spins:58
+Number of unstable spins:58
+Number of unstable spins:59
+Number of unstable spins:59
+Number of unstable spins:58
+Number of unstable spins:56
+Number of unstable spins:54
+Number of unstable spins:54
+Number of unstable spins:54
+Number of unstable spins:58
+Number of unstable spins:55
+Number of unstable spins:58
+Number of unstable spins:54
+Number of unstable spins:54
+Number of unstable spins:56
+Number of unstable spins:57
+Number of unstable spins:58
+Number of unstable spins:59
+Number of unstable spins:56
+Number of unstable spins:61
+Number of unstable spins:60
+Number of unstable spins:58
+Number of unstable spins:55
+Number of unstable spins:59
+Number of unstable spins:60
+Number of unstable spins:58
+Number of unstable spins:60
+Number of unstable spins:55
+Number of unstable spins:57
+Number of unstable spins:57
+Number of unstable spins:57
+Number of unstable spins:58
+Number of unstable spins:61
+Number of unstable spins:58
+Number of unstable spins:56
+Number of unstable spins:57
+Number of unstable spins:58
+Number of unstable spins:56
+Number of unstable spins:54
+Number of unstable spins:52
+Number of unstable spins:54
+Number of unstable spins:48
+Number of unstable spins:49
+Number of unstable spins:50
+Number of unstable spins:51
+Number of unstable spins:54
+Number of unstable spins:55
+Number of unstable spins:57
+Number of unstable spins:57
+Number of unstable spins:55
+Number of unstable spins:60
+Number of unstable spins:58
+Number of unstable spins:57
+Number of unstable spins:55
+Number of unstable spins:54
+Number of unstable spins:51
+Number of unstable spins:49
+Number of unstable spins:48
+Number of unstable spins:46
+Number of unstable spins:46
+Number of unstable spins:48
+Number of unstable spins:49
+Number of unstable spins:44
+Number of unstable spins:45
+Number of unstable spins:44
+Number of unstable spins:46
+Number of unstable spins:47
+Number of unstable spins:43
+Number of unstable spins:43
+Number of unstable spins:44
+Number of unstable spins:44
+Number of unstable spins:39
+Number of unstable spins:37
+Number of unstable spins:40
+Number of unstable spins:35
+Number of unstable spins:36
+Number of unstable spins:33
+Number of unstable spins:34
+Number of unstable spins:31
+Number of unstable spins:30
+Number of unstable spins:30
+Number of unstable spins:25
+Number of unstable spins:32
+Number of unstable spins:31
+Number of unstable spins:29
+Number of unstable spins:32
+Number of unstable spins:30
+Number of unstable spins:28
+Number of unstable spins:30
+Number of unstable spins:35
+Number of unstable spins:34
+Number of unstable spins:31
+Number of unstable spins:35
+Number of unstable spins:29
+Number of unstable spins:26
+Number of unstable spins:26
+Number of unstable spins:24
+Number of unstable spins:28
+Number of unstable spins:25
+Number of unstable spins:23
+Number of unstable spins:19
+Number of unstable spins:16
+Number of unstable spins:12
+Number of unstable spins:14
+Number of unstable spins:18
+Number of unstable spins:19
+Number of unstable spins:14
+Number of unstable spins:18
+Number of unstable spins:13
+Number of unstable spins:22
+Number of unstable spins:21
+Number of unstable spins:21
+Number of unstable spins:21
+Number of unstable spins:22
+Number of unstable spins:25
+Number of unstable spins:26
+Number of unstable spins:22
+Number of unstable spins:21
+Number of unstable spins:27
+Number of unstable spins:24
+Number of unstable spins:25
+Number of unstable spins:23
+Number of unstable spins:23
+Number of unstable spins:24
+Number of unstable spins:23
+Number of unstable spins:27
+Number of unstable spins:26
+Number of unstable spins:25
+Number of unstable spins:27
+Number of unstable spins:31
+Number of unstable spins:26
+Number of unstable spins:25
+Number of unstable spins:24
+Number of unstable spins:25
+Number of unstable spins:25
+Number of unstable spins:29
+Number of unstable spins:29
+Number of unstable spins:31
+Number of unstable spins:31
+Number of unstable spins:30
+Number of unstable spins:30
+Number of unstable spins:26
+Number of unstable spins:22
+Number of unstable spins:26
+Number of unstable spins:25
+Number of unstable spins:26
+Number of unstable spins:23
+Number of unstable spins:22
+Number of unstable spins:20
+Number of unstable spins:20
+Number of unstable spins:20
+Number of unstable spins:19
+Number of unstable spins:21
+Number of unstable spins:24
+Number of unstable spins:20
+Number of unstable spins:19
+Number of unstable spins:22
+Number of unstable spins:22
+Number of unstable spins:19
+Number of unstable spins:21
+Number of unstable spins:22
+Number of unstable spins:22
+Number of unstable spins:22
+Number of unstable spins:23
+Number of unstable spins:22
+Number of unstable spins:17
+Number of unstable spins:20
+Number of unstable spins:20
+Number of unstable spins:18
+Number of unstable spins:18
+Number of unstable spins:20
+Number of unstable spins:17
+Number of unstable spins:17
+Number of unstable spins:18
+Number of unstable spins:20
+Number of unstable spins:21
+Number of unstable spins:20
+Number of unstable spins:18
+Number of unstable spins:21
+Number of unstable spins:19
+Number of unstable spins:21
+Number of unstable spins:20
+Number of unstable spins:20
+Number of unstable spins:19
+Number of unstable spins:20
+Number of unstable spins:18
+Number of unstable spins:19
+Number of unstable spins:24
+Number of unstable spins:21
+Number of unstable spins:18
+Number of unstable spins:22
+Number of unstable spins:21
+Number of unstable spins:21
+Number of unstable spins:23
+Number of unstable spins:21
+Number of unstable spins:24
+Number of unstable spins:24
+Number of unstable spins:21
+Number of unstable spins:20
+Number of unstable spins:19
+Number of unstable spins:22
+Number of unstable spins:23
+Number of unstable spins:28
+Number of unstable spins:27
+Number of unstable spins:27
+Number of unstable spins:28
+Number of unstable spins:23
+Number of unstable spins:24
+Number of unstable spins:23
+Number of unstable spins:23
+Number of unstable spins:19
+Number of unstable spins:16
+Number of unstable spins:19
+Number of unstable spins:18
+Number of unstable spins:17
+Number of unstable spins:16
+Number of unstable spins:16
+Number of unstable spins:16
+Number of unstable spins:18
+Number of unstable spins:21
+Number of unstable spins:22
+Number of unstable spins:24
+Number of unstable spins:24
+Number of unstable spins:25
+Number of unstable spins:24
+Number of unstable spins:26
+Number of unstable spins:25
+Number of unstable spins:27
+Number of unstable spins:26
+Number of unstable spins:26
+Number of unstable spins:31
+Number of unstable spins:29
+Number of unstable spins:27
+Number of unstable spins:29
+Number of unstable spins:29
+Number of unstable spins:26
+Number of unstable spins:26
+Number of unstable spins:23
+Number of unstable spins:26
+Number of unstable spins:22
+Number of unstable spins:20
+Number of unstable spins:20
+Number of unstable spins:19
+Number of unstable spins:18
+Number of unstable spins:17
+Number of unstable spins:20
+Number of unstable spins:19
+Number of unstable spins:22
+Number of unstable spins:20
+Number of unstable spins:22
+Number of unstable spins:22
+Number of unstable spins:23
+Number of unstable spins:21
+Number of unstable spins:24
+Number of unstable spins:22
+Number of unstable spins:23
+Number of unstable spins:21
+Number of unstable spins:19
+Number of unstable spins:21
+Number of unstable spins:18
+Number of unstable spins:17
+Number of unstable spins:22
+Number of unstable spins:20
+Number of unstable spins:16
+Number of unstable spins:19
+Number of unstable spins:22
+Number of unstable spins:21
+Number of unstable spins:18
+Number of unstable spins:17
+Number of unstable spins:19
+Number of unstable spins:19
+Number of unstable spins:21
+Number of unstable spins:17
+Number of unstable spins:21
+Number of unstable spins:22
+Number of unstable spins:20
+Number of unstable spins:18
+Number of unstable spins:21
+Number of unstable spins:20
+Number of unstable spins:22
+Number of unstable spins:18
+Number of unstable spins:17
+Number of unstable spins:17
+Number of unstable spins:18
+Number of unstable spins:17
+Number of unstable spins:23
+Number of unstable spins:21
+Number of unstable spins:19
+Number of unstable spins:19
+Number of unstable spins:19
+Number of unstable spins:22
+Number of unstable spins:15
+Number of unstable spins:20
+Number of unstable spins:18
+Number of unstable spins:14
+Number of unstable spins:19
+Number of unstable spins:16
+Number of unstable spins:15
+Number of unstable spins:12
+Number of unstable spins:13
+Number of unstable spins:12
+Number of unstable spins:9
+Number of unstable spins:8
+Number of unstable spins:6
+Number of unstable spins:15
+Number of unstable spins:12
+Number of unstable spins:9
+Number of unstable spins:12
+Number of unstable spins:13
+Number of unstable spins:14
+Number of unstable spins:16
+Number of unstable spins:13
+Number of unstable spins:10
+Number of unstable spins:9
+Number of unstable spins:8
+Number of unstable spins:8
+Number of unstable spins:8
+Number of unstable spins:9
+Number of unstable spins:5
+Number of unstable spins:4
+Number of unstable spins:3
+Number of unstable spins:4
+Number of unstable spins:9
+Number of unstable spins:11
+Number of unstable spins:8
+Number of unstable spins:6
+Number of unstable spins:8
+Number of unstable spins:8
+Number of unstable spins:11
+Number of unstable spins:11
+Number of unstable spins:15
+Number of unstable spins:12
+Number of unstable spins:15
+Number of unstable spins:9
+Number of unstable spins:10
+Number of unstable spins:10
+Number of unstable spins:9
+Number of unstable spins:7
+Number of unstable spins:5
+Number of unstable spins:8
+Number of unstable spins:8
+Number of unstable spins:10
+Number of unstable spins:11
+Number of unstable spins:15
+Number of unstable spins:11
+Number of unstable spins:11
+Number of unstable spins:11
+Number of unstable spins:11
+Number of unstable spins:10
+Number of unstable spins:8
+Number of unstable spins:11
+Number of unstable spins:8
+Number of unstable spins:9
+Number of unstable spins:7
+Number of unstable spins:9
+Number of unstable spins:11
+Number of unstable spins:8
+Number of unstable spins:9
+Number of unstable spins:10
+Number of unstable spins:9
+Number of unstable spins:8
+Number of unstable spins:10
+Number of unstable spins:8
+Number of unstable spins:12
+Number of unstable spins:12
+Number of unstable spins:11
+Number of unstable spins:10
+Number of unstable spins:12
+Number of unstable spins:15
+Number of unstable spins:13
+Number of unstable spins:12
+Number of unstable spins:13
+Number of unstable spins:13
+Number of unstable spins:11
+Number of unstable spins:11
+Number of unstable spins:12
+Number of unstable spins:13
+Number of unstable spins:13
+Number of unstable spins:14
+Number of unstable spins:13
+Number of unstable spins:14
+Number of unstable spins:15
+Number of unstable spins:16
+Number of unstable spins:15
+Number of unstable spins:15
+Number of unstable spins:13
+Number of unstable spins:15
+Number of unstable spins:11
+Number of unstable spins:10
+Number of unstable spins:8
+Number of unstable spins:9
+Number of unstable spins:11
+Number of unstable spins:9
+Number of unstable spins:9
+Number of unstable spins:10
+Number of unstable spins:9
+Number of unstable spins:8
+Number of unstable spins:5
+Number of unstable spins:5
+Number of unstable spins:5
+Number of unstable spins:6
+Number of unstable spins:5
+Number of unstable spins:8
+Number of unstable spins:8
+Number of unstable spins:5
+Number of unstable spins:7
+Number of unstable spins:9
+Number of unstable spins:11
+Number of unstable spins:12
+Number of unstable spins:13
+Number of unstable spins:13
+Number of unstable spins:17
+Number of unstable spins:14
+Number of unstable spins:16
+Number of unstable spins:17
+Number of unstable spins:16
+Number of unstable spins:18
+Number of unstable spins:15
+Number of unstable spins:16
+Number of unstable spins:18
+Number of unstable spins:18
+Number of unstable spins:20
+Number of unstable spins:15
+Number of unstable spins:14
+Number of unstable spins:10
+Number of unstable spins:12
+Number of unstable spins:13
+Number of unstable spins:12
+Number of unstable spins:13
+Number of unstable spins:11
+Number of unstable spins:9
+Number of unstable spins:11
+Number of unstable spins:8
+Number of unstable spins:10
+Number of unstable spins:12
+Number of unstable spins:10
+Number of unstable spins:12
+Number of unstable spins:10
+Number of unstable spins:10
+Number of unstable spins:13
+Number of unstable spins:14
+Number of unstable spins:13
+Number of unstable spins:12
+Number of unstable spins:13
+Number of unstable spins:14
+Number of unstable spins:13
+Number of unstable spins:11
+Number of unstable spins:13
+Number of unstable spins:9
+Number of unstable spins:8
+Number of unstable spins:8
+Number of unstable spins:6
+Number of unstable spins:7
+Number of unstable spins:8
+Number of unstable spins:7
+Number of unstable spins:5
+Number of unstable spins:3
+Number of unstable spins:6
+Number of unstable spins:6
+Number of unstable spins:10
+Number of unstable spins:9
+Number of unstable spins:10
+Number of unstable spins:9
+Number of unstable spins:12
+Number of unstable spins:11
+Number of unstable spins:10
+Number of unstable spins:10
+Number of unstable spins:13
+Number of unstable spins:11
+Number of unstable spins:10
+Number of unstable spins:8
+Number of unstable spins:9
+Number of unstable spins:13
+Number of unstable spins:13
+Number of unstable spins:12
+Number of unstable spins:7
+Number of unstable spins:9
+Number of unstable spins:7
+Number of unstable spins:10
+Number of unstable spins:8
+Number of unstable spins:8
+Number of unstable spins:8
+Number of unstable spins:9
+Number of unstable spins:10
+Number of unstable spins:6
+Number of unstable spins:9
+Number of unstable spins:9
+Number of unstable spins:11
+Number of unstable spins:11
+Number of unstable spins:10
+Number of unstable spins:10
+Number of unstable spins:8
+Number of unstable spins:7
+Number of unstable spins:6
+Number of unstable spins:4
+Number of unstable spins:5
+Number of unstable spins:6
+Number of unstable spins:7
+Number of unstable spins:5
+Number of unstable spins:1
+Number of unstable spins:3
+Number of unstable spins:5
+Number of unstable spins:5
+Number of unstable spins:3
+Number of unstable spins:3
+Number of unstable spins:5
+Number of unstable spins:6
+Number of unstable spins:6
+Number of unstable spins:5
+Number of unstable spins:3
+Number of unstable spins:0
+Number	Field
+500	0.250000
+
+sigma	xi	h
+1	1	0.167125
+-1	1	-0.795055
+-1	1	-0.704511
+-1	-1	-1.452969
+-1	1	-0.322773
+1	1	0.124846
+-1	-1	-1.353625
+1	-1	0.679031
+-1	1	-2.208117
+1	1	0.889459
+1	1	1.180093
+1	-1	1.848909
+1	1	0.759872
+1	-1	0.995846
+-1	-1	-4.072239
+1	1	2.452429
+1	1	1.096105
+-1	-1	-1.145743
+1	-1	2.087709
+-1	-1	-0.626942
+1	1	1.245416
+1	1	1.063839
+-1	-1	-1.075049
+-1	-1	-0.976925
+1	1	1.040482
+1	1	0.581160
+1	-1	1.821105
+-1	-1	-3.570889
+1	1	1.316927
+1	-1	0.902847
+-1	-1	-1.091166
+1	-1	1.182908
+1	1	1.509348
+1	1	1.069921
+-1	-1	-0.533337
+-1	1	-1.285449
+1	1	2.209962
+1	1	1.239674
+1	1	0.902009
+1	1	1.699068
+1	1	1.093054
+-1	-1	-0.910658
+1	1	0.925058
+1	-1	1.909681
+-1	-1	-0.950745
+1	1	0.845287
+-1	1	-3.276407
+1	1	2.374712
+-1	1	-2.445898
+1	1	0.866802
+-1	-1	-2.074181
+-1	-1	-0.063176
+1	1	0.988386
+-1	1	-1.250763
+1	1	0.376172
+1	-1	1.318255
+-1	1	-0.202643
+1	1	2.568228
+-1	-1	-0.822161
+-1	1	-0.808043
+1	1	1.267261
+1	1	0.527138
+1	-1	2.141239
+-1	1	-1.107058
+-1	-1	-0.012787
+-1	1	-3.643765
+1	1	0.334879
+-1	-1	-2.447526
+1	1	0.490645
+-1	-1	-1.386162
+-1	-1	-1.977122
+1	-1	1.963587
+-1	-1	-0.661936
+1	-1	1.002767
+-1	-1	-3.430259
+-1	-1	-0.702045
+1	-1	2.146527
+-1	-1	-1.788890
+-1	1	-2.630261
+-1	-1	-1.596673
+1	-1	1.800709
+-1	-1	-1.041516
+1	-1	1.070307
+1	-1	0.763421
+1	-1	1.626356
+1	1	1.019176
+-1	-1	-1.579583
+-1	-1	-1.229210
+-1	1	-0.721382
+-1	1	-1.753641
+1	-1	0.796079
+-1	-1	-0.683403
+1	-1	0.807235
+1	-1	0.981609
+1	-1	1.116303
+-1	1	-1.348561
+1	1	1.110057
+1	1	1.533082
+-1	-1	-0.723477
+-1	-1	-3.604801
+-1	1	-4.384206
+-1	1	-1.948425
+1	-1	3.089704
+-1	1	-0.717764
+1	1	0.978387
+-1	-1	-1.002951
+1	-1	0.529571
+-1	1	-2.245155
+-1	-1	-0.714145
+1	1	0.327805
+-1	-1	-1.827120
+-1	1	-4.089521
+1	-1	4.122812
+-1	-1	-2.471376
+-1	1	-0.180377
+1	1	2.132806
+-1	1	-2.708589
+-1	1	-1.361836
+-1	-1	-0.869830
+-1	1	-0.573322
+-1	-1	-0.638538
+-1	-1	-0.581148
+-1	-1	-0.509642
+1	1	1.216845
+1	-1	0.378785
+1	-1	1.195683
+-1	-1	-1.329931
+-1	-1	-2.137061
+-1	-1	-3.889487
+1	-1	2.795933
+1	-1	0.201075
+1	-1	0.480085
+-1	1	-0.274967
+1	-1	3.308395
+1	-1	0.437199
+-1	1	-1.815715
+1	-1	1.234383
+1	-1	1.358600
+-1	1	-1.277699
+1	1	1.465306
+1	-1	1.339981
+-1	1	-0.034726
+-1	-1	-0.157496
+1	-1	1.976019
+1	-1	1.746476
+-1	-1	-0.104441
+-1	-1	-1.430536
+-1	-1	-1.476575
+1	1	0.309573
+1	-1	1.521386
+1	1	0.129574
+1	-1	0.776320
+1	1	1.636491
+1	1	0.572280
+-1	-1	-1.676056
+-1	1	-2.246753
+1	-1	0.564731
+-1	-1	-2.076905
+1	-1	1.483979
+-1	-1	-0.476474
+1	-1	4.314104
+-1	-1	-2.573912
+1	1	2.503049
+-1	-1	-1.151372
+1	-1	0.629040
+-1	-1	-0.792369
+-1	1	-0.894131
+1	1	0.539461
+1	-1	1.325417
+1	-1	2.603335
+1	1	1.643036
+-1	1	-0.377519
+-1	-1	-0.751162
+-1	1	-1.042061
+-1	-1	-1.970916
+1	1	2.186044
+-1	-1	-1.237603
+-1	-1	-3.105337
+1	1	1.540517
+1	1	1.531097
+1	1	0.473160
+-1	1	-0.107739
+1	1	0.634868
+1	1	3.211817
+1	1	1.382439
+-1	1	-0.949432
+1	-1	2.862236
+-1	1	-1.227957
+1	1	1.770022
+1	-1	4.590652
+1	1	1.608423
+-1	1	-2.914702
+1	1	3.016619
+-1	1	-0.305684
+1	1	0.735560
+1	1	1.725408
+-1	-1	-1.314110
+1	1	0.512917
+1	-1	1.812699
+-1	-1	-0.106673
+1	1	1.192801
+1	1	1.525047
+1	1	0.394482
+-1	-1	-2.456054
+1	-1	0.414858
+-1	-1	-1.160378
+1	-1	0.795943
+1	-1	2.116836
+-1	1	-3.472436
+1	-1	0.213036
+1	1	0.375829
+-1	-1	-1.944456
+-1	-1	-0.640772
+1	1	0.821300
+-1	1	-0.292865
+-1	-1	-1.293026
+1	1	1.398093
+1	-1	1.043752
+1	1	2.036139
+1	1	0.485747
+1	1	0.390668
+1	-1	1.275222
+-1	-1	-0.897400
+-1	-1	-1.195153
+1	1	1.116538
+-1	1	-0.689942
+1	-1	1.492502
+-1	-1	-0.433096
+1	-1	1.538964
+1	-1	0.908265
+-1	1	-1.268663
+-1	-1	-2.574995
+-1	-1	-2.968598
+-1	1	-1.228953
+-1	-1	-0.486431
+1	1	1.992976
+1	-1	0.360839
+-1	1	-0.705550
+-1	-1	-0.367376
+1	1	0.643639
+1	1	0.374244
+-1	-1	-2.644185
+1	-1	0.159907
+-1	1	-0.169966
+1	-1	1.663824
+1	1	0.405036
+1	1	1.892111
+-1	-1	-2.772315
+-1	1	-1.835640
+-1	1	-1.234608
+1	1	1.221107
+1	1	2.194644
+1	1	0.634974
+-1	1	-1.353170
+-1	-1	-1.219116
+-1	1	-0.059442
+-1	-1	-1.892282
+1	-1	1.471296
+1	1	1.475744
+-1	-1	-1.030610
+-1	-1	-1.916534
+1	1	0.717754
+1	-1	0.799789
+-1	-1	-0.749473
+1	1	1.660551
+1	-1	1.341101
+-1	1	-1.160818
+1	1	3.007700
+-1	1	-4.077886
+1	1	1.036483
+-1	-1	-0.201376
+1	1	1.868645
+1	-1	0.461796
+-1	1	-0.816060
+-1	1	-0.901996
+1	1	0.813780
+1	1	0.666345
+1	1	0.562790
+-1	1	-0.746322
+-1	1	-1.797191
+1	1	1.574951
+1	-1	1.657328
+-1	1	-0.841093
+1	1	0.726412
+1	1	1.190214
+1	-1	0.982461
+-1	-1	-2.771559
+-1	1	-2.291373
+1	1	1.653574
+1	1	1.270268
+1	1	0.828239
+1	1	2.922104
+-1	1	-1.751983
+-1	-1	-1.331922
+-1	1	-0.531526
+-1	1	-2.306434
+-1	1	-0.427353
+-1	1	-1.647250
+-1	-1	-1.966826
+1	-1	0.387162
+1	1	1.128570
+1	1	0.922517
+1	1	0.940517
+-1	-1	-0.769728
+1	1	0.559116
+1	1	0.272191
+-1	1	-2.176352
+1	1	2.308137
+-1	-1	-3.270170
+-1	1	-0.954139
+-1	1	-0.441494
+1	1	0.958975
+1	1	1.740420
+1	-1	1.029351
+1	-1	2.534637
+-1	1	-2.186303
+1	-1	2.644698
+1	-1	1.146433
+1	-1	1.137597
+-1	1	-1.758489
+-1	-1	-0.543854
+1	-1	0.491587
+-1	-1	-2.567827
+-1	1	-0.327557
+-1	1	-0.285698
+1	1	0.628189
+1	-1	0.833595
+1	1	2.324259
+1	1	1.722208
+-1	-1	-0.560149
+1	-1	0.302952
+-1	-1	-2.696300
+-1	-1	-0.973339
+1	1	1.193270
+1	1	1.045964
+-1	-1	-4.281132
+1	1	0.950627
+1	1	1.272389
+1	1	0.655078
+1	1	2.808858
+-1	-1	-1.236841
+1	1	2.022166
+1	1	2.027476
+1	1	1.021633
+-1	-1	-0.266961
+-1	-1	-0.665239
+-1	1	-1.417186
+-1	-1	-1.384015
+1	1	1.499435
+-1	-1	-1.833610
+1	-1	1.475955
+1	-1	1.076193
+1	-1	1.088610
+-1	1	-2.363610
+-1	1	-1.101724
+-1	1	-0.056990
+-1	-1	-0.094802
+1	-1	0.409449
+-1	1	-0.353155
+-1	-1	-1.424227
+-1	-1	-5.537120
+1	1	0.265723
+1	-1	1.681185
+-1	-1	-0.745367
+-1	1	-2.983109
+-1	1	-2.348353
+-1	1	-0.273567
+1	-1	1.097605
+-1	-1	-2.077936
+-1	-1	-2.586811
+1	1	0.195217
+1	1	1.436562
+1	-1	0.403433
+1	1	1.638627
+1	1	0.479628
+1	1	1.745787
+-1	1	-0.775386
+1	1	0.013859
+-1	-1	-0.754265
+1	-1	0.121293
+1	1	0.683768
+1	1	1.570834
+-1	-1	-3.162654
+1	-1	5.306100
+1	-1	1.226871
+-1	-1	-2.493417
+1	1	1.608924
+-1	-1	-0.897091
+-1	-1	-1.772370
+1	1	1.614567
+1	-1	0.719206
+1	-1	1.026657
+-1	-1	-1.770100
+-1	1	-0.434232
+1	1	2.229979
+1	1	0.631190
+1	1	1.231224
+1	-1	0.186734
+-1	1	-0.474213
+-1	1	-2.470536
+-1	1	-3.773491
+1	-1	2.084588
+1	1	1.794798
+1	1	0.635074
+-1	-1	-0.580292
+1	-1	1.602650
+-1	-1	-1.021621
+-1	-1	-0.115033
+-1	1	-3.290180
+1	-1	1.608176
+-1	1	-1.279184
+-1	-1	-2.072330
+1	-1	1.587318
+-1	1	-4.288539
+1	-1	0.453277
+-1	-1	-1.259033
+1	1	1.330560
+1	1	1.114043
+-1	1	-1.926674
+-1	-1	-0.388615
+1	-1	1.439032
+1	1	1.685704
+-1	-1	-0.302623
+1	1	1.271034
+1	1	1.685566
+1	1	0.597442
+1	-1	0.937731
+1	-1	1.171463
+1	1	1.240082
+1	1	0.724980
+-1	1	-1.677059
+-1	-1	-1.470549
+-1	1	-1.746058
+1	1	1.280188
+1	1	1.431734
+1	-1	0.485326
+-1	-1	-0.300192
+-1	1	-1.466553
+-1	-1	-2.250031
+-1	-1	-0.235850
+-1	-1	-1.447997
+1	1	0.601440
+1	-1	1.787419
+1	1	0.089368
+1	1	0.481069
+1	-1	0.389557
+1	1	0.521040
+1	-1	1.104883
+1	-1	1.721999
+1	-1	0.918592
+1	1	0.104777
+-1	1	-1.394027
+-1	-1	-2.519241
+1	-1	0.478884
+-1	-1	-2.058681
+1	-1	1.911313
+1	-1	0.833774
+1	-1	1.059946
+1	-1	1.090986
+-1	1	-0.615858
+-1	1	-0.386638
+1	-1	2.553018
+-1	-1	-3.665145
+1	1	1.720371
+1	-1	1.845694
+-1	-1	-1.483359
+1	1	1.664955
+1	-1	1.241872
+1	-1	1.980241
+1	-1	0.820555
+1	1	0.601659
+-1	1	-0.449243
+-1	1	-1.232283
+1	-1	1.788393
+-1	1	-0.245378
+-1	1	-2.466708
+1	-1	1.642330
+1	-1	0.739218
+-1	-1	-1.566993
+1	1	1.683062
+1	1	1.303340
+-1	-1	-1.811236
+-1	-1	-1.068600
+-1	1	-1.202559
+1	-1	1.742656
+-1	1	-2.297953
+1	1	1.477547
+1	1	1.330637
+1	-1	1.981032
+-1	1	-1.960970
+1	-1	1.485084
+1	1	2.581125
+1	-1	0.414703
+-1	1	-0.568800
+1	1	1.595917
+1	1	2.312215
+1	-1	1.989238
+-1	1	-0.508575
+1	1	1.470221
+1	1	1.466746
+
+Eneryg		Magnetization
+0.885819	0.120000
+
+Unstable spins:
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+Number of unstable spins: 0
+-0.106322	0.120000

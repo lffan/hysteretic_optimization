@@ -1,10 +1,10 @@
-#define SIZE 8
-#define H1 1
+#define SIZE 500
+#define H1 0.25
 
 typedef struct{
 	int N;
 	int sigma[SIZE];
-	double J[SIZE][SIZE];
+	float J[SIZE][SIZE];
 	double energy;
 	double magnetization;
 
@@ -18,4 +18,6 @@ typedef struct{
 
 GLASS_SK init_sys();
 void identify_unstable(GLASS_SK *);
+void update_en_mag(GLASS_SK *sys, int s);
+void quench(GLASS_SK *sys);
 void print_system_status(GLASS_SK *sys);

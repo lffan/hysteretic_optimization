@@ -11,36 +11,48 @@ GLASS_SK init_sys(){
 	// Return an initialized GLASS_SK structure.
 
 	GLASS_SK sys;
-	sys.N = SIZE;
+	sys.N = SIZE;	/* number of spins */
 	sys.H = H1;		/* external field */
 
 	int i, j;
-	/* Initialize sys.sigma, sys.J, sys.xi */
+	/* Initialize sys.sigma, sys.xi */
 	for(i = 0; i < sys.N; i++){
 		sys.sigma[i] = 1;
 		sys.xi[i] = ir1279()%2 * 2 - 1;
+	}
+
+	/* Initialize sys.J: allocate memory and asign values */
+	sys.J = (double**)malloc(sizeof(double*) * sys.N);
+	for(i = 0; i < sys.N; i++)
+		sys.J[i] = (double*)malloc(sizeof(double) * sys.N);
+	for(i = 0; i < sys.N; i++){
 		sys.J[i][i] = 0;
 		for(j = 0; j < i; j++)
 			sys.J[i][j] = sys.J[j][i] = gauss()/sqrt(sys.N);
 	}
 
-	/* Initialize sys.h, sys.energy, sys.magnetization*/
+	/* Initialize sys.energy */
 	sys.energy = 0;
+	for(i = 0; i < sys.N; i++){
+		sys.energy += - sys.H * sys.xi[i] * sys.sigma[i];
+		for(j = 0; j < sys.N; j++)
+			sys.energy += - 0.5 * sys.J[i][j] * sys.sigma[i] * sys.sigma[j];
+	}
+
+	/* Initialize sys.magnetization */
 	sys.magnetization = 0;
+	for(i = 0; i < sys.N; i++)
+		sys.magnetization += sys.xi[i] * sys.sigma[i];
+
+	/* Initialize sys.h */
 	for(i = 0; i < sys.N; i++){
 		sys.h[i] = sys.H * sys.xi[i];
-		sys.magnetization += sys.xi[i] * sys.sigma[i];
-		for(j = 0; j < sys.N; j++){
+		for(j = 0; j < sys.N; j++)
 			sys.h[i] += sys.J[i][j] * sys.sigma[j];
-			sys.energy += - 0.5 * sys.J[i][j] * sys.sigma[i] * sys.sigma[j];
-		}
 	}
 
 	/* Initialize unstable spins */
-		for(i = 0; i < sys.N; i++){
-			sys.unstable[i] = -1;
-		}
-		sys.unstable_num = sys.N;
+	identify_unstable(&sys);
 
 	return sys;
 }
@@ -63,17 +75,16 @@ void identify_unstable(GLASS_SK *sys){
 	}
 }
 
-void update_en_mag(GLASS_SK *sys, int s){
+void update_spin(GLASS_SK *sys, int s){
 	// Assume s the index of a flipped spin.
 	// Update the spin, energy, magnetization, and the local field,
 	// that is to say, sys.sigma[], sys.energy, sys.magnetization, and sys.h[]
-	int i;
 	sys->sigma[s] = - sys->sigma[s];
 	sys->magnetization += 2 * sys->xi[s] * sys->sigma[s];
-	sys->energy -= 2 * sys->h[i] * sys->sigma[s];
-	for(i = 0; i < sys->N; i++){
+	sys->energy -= 2 * sys->h[s] * sys->sigma[s];
+	int i;
+	for(i = 0; i < sys->N; i++)
 		sys->h[i] += 2 * sys->J[i][s] * sys->sigma[i] * sys->sigma[s];
-	}
 }
 
 void quench(GLASS_SK *sys){
@@ -81,14 +92,43 @@ void quench(GLASS_SK *sys){
 	// Update the system after the flipping.
 	// Repeat untill all the spins are stable.
 
-	int i = 0 , s;
-	identify_unstable(sys);
+	int i, s;
+	double energy, magnetization;
+
 	while(sys->unstable_num > 0){
 		s = ir1279()%sys->unstable_num;
-		update_en_mag(sys, sys->unstable[s]);
+
+		printf("Selected: %d\n", sys->unstable[s]);
+		for(i = 0; i < sys->N; i++)
+			printf("%d\t", sys->sigma[i]);
+		printf("\n");
+		update_spin(sys, sys->unstable[s]);
+		for(i = 0; i < sys->N; i++)
+			printf("%d\t", sys->sigma[i]);
+		printf("\n");		
 		identify_unstable(sys);
-		printf("Number of unstable spins:%d\n", sys->unstable_num);
-		i++;
+
+		/* TEST */
+		printf("%f\t%f\n", sys->energy/sys->N, sys->magnetization/sys->N);
+		
+		int i, j;
+		energy = 0;
+		for(i = 0; i < sys->N; i++){
+			energy += - sys->H * sys->xi[i] * sys->sigma[i];
+			for(j = 0; j < sys->N; j++)
+				energy += - 0.5 * sys->J[i][j] * sys->sigma[i] * sys->sigma[j];
+		}
+		magnetization = 0;
+		for(i = 0; i < sys->N; i++)
+			magnetization += sys->xi[i] * sys->sigma[i];
+		printf("%f\t%f\n\n", energy/sys->N, magnetization/sys->N);
+	}
+}
+
+void ac_demag(GLASS_SK *sys){
+	while(sys->H >= 0){
+		quench(sys);
+		sys->H -= 0.001;
 	}
 }
 
@@ -102,21 +142,22 @@ void print_system_status(GLASS_SK *sys){
 	for(i = 0; i <sys->N; i++){
 		printf("%d\t%d\t%f\n", sys->sigma[i], sys->xi[i], sys->h[i]);
 	}
-	// printf("\nJ[i][j]:\n");
-	// for(i = 0; i < sys->N; i++){
-	// 	for(j = 0; j < sys->N; j++){
-	// 		printf("%f\t", sys->J[i][j]);
-	// 	}
-	// 	printf("\n");	
-	// }
+
+	printf("\nJ[i][j]:\n");
+	for(i = 0; i < sys->N; i++){
+		for(j = 0; j < sys->N; j++){
+			printf("%f\t", sys->J[i][j]);
+		}
+		printf("\n");	
+	}
+
 	printf("\nEneryg\t\tMagnetization\n");
-	printf("%f\t%f\n", sys->energy/sys->N, sys->magnetization/sys->N);
+	printf("%f\t%f\n\n", sys->energy/sys->N, sys->magnetization/sys->N);
 
 	/* Test teh indentify_unstable*/
-	identify_unstable(sys);
-	printf("\nUnstable spins:\n");
-	for(i = 0; i < sys->N; i++){
-		printf("%d\n", sys->unstable[i]);
-	}
-	printf("Number of unstable spins: %d\n", sys->unstable_num);
+	// printf("\nUnstable spins:\n");
+	// for(i = 0; i < sys->N; i++){
+	// 	printf("%d\n", sys->unstable[i]);
+	// }
+	printf("Number of unstable spins: %d\n\n", sys->unstable_num);
 }

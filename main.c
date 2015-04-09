@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include "r1279.h"
 #include "gaussian.h"
+#include "glassSK.h"
 
 long seedgen(void);
 
@@ -11,14 +13,15 @@ int main(){
 	seed = seedgen();
 	setr1279(seed);
 
-	int i;
-	double x, sumx, sumx2;
-	for(i = 0; i < 100000; i++){
-		x = gauss();
-		sumx += x;
-		sumx2 += x*x;
-	}
-	printf("%f\t%f\n", sumx/100000, sumx2/100000);
+	int i, j;
+	double energy, magnetization;
+
+	GLASS_SK sys;
+	
+	sys = init_sys();
+	print_system_status(&sys);
+	quench(&sys);
+	print_system_status(&sys);
 
 	return 0;
 }

@@ -16,7 +16,7 @@ int main(){
 	int i, j;
 	double energy, magnetization;
 
-	GLASS_SK sys;
+	static GLASS_SK sys;
 	
 	sys = init_sys();
 	print_system_status(&sys);

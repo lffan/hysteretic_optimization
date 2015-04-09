@@ -79,12 +79,13 @@ void update_spin(GLASS_SK *sys, int s){
 	// Assume s the index of a flipped spin.
 	// Update the spin, energy, magnetization, and the local field,
 	// that is to say, sys.sigma[], sys.energy, sys.magnetization, and sys.h[]
+	int j;
+	// index = sys->unstable[s];
 	sys->sigma[s] = - sys->sigma[s];
-	sys->magnetization += 2 * sys->xi[s] * sys->sigma[s];
 	sys->energy -= 2 * sys->h[s] * sys->sigma[s];
-	int i;
-	for(i = 0; i < sys->N; i++)
-		sys->h[i] += 2 * sys->J[i][s] * sys->sigma[i] * sys->sigma[s];
+	sys->magnetization += 2 * sys->xi[s] * sys->sigma[s];
+	for(j = 0; j < sys->N; j++)
+		sys->h[j] += 2 * sys->J[j][s] * sys->sigma[s];
 }
 
 void quench(GLASS_SK *sys){
@@ -97,15 +98,7 @@ void quench(GLASS_SK *sys){
 
 	while(sys->unstable_num > 0){
 		s = ir1279()%sys->unstable_num;
-
-		printf("Selected: %d\n", sys->unstable[s]);
-		for(i = 0; i < sys->N; i++)
-			printf("%d\t", sys->sigma[i]);
-		printf("\n");
 		update_spin(sys, sys->unstable[s]);
-		for(i = 0; i < sys->N; i++)
-			printf("%d\t", sys->sigma[i]);
-		printf("\n");		
 		identify_unstable(sys);
 
 		/* TEST */
@@ -135,21 +128,21 @@ void ac_demag(GLASS_SK *sys){
 void print_system_status(GLASS_SK *sys){
 	// Print out the current status of the system
 
-	int i, j;
-	printf("Number\tField\n");
-	printf("%d\t%f\n\n", sys->N, sys->H);
-	printf("sigma\txi\th\n");
-	for(i = 0; i <sys->N; i++){
-		printf("%d\t%d\t%f\n", sys->sigma[i], sys->xi[i], sys->h[i]);
-	}
+	// int i, j;
+	// printf("Number\tField\n");
+	// printf("%d\t%f\n\n", sys->N, sys->H);
+	// printf("sigma\txi\th\n");
+	// for(i = 0; i <sys->N; i++){
+	// 	printf("%d\t%d\t%f\n", sys->sigma[i], sys->xi[i], sys->h[i]);
+	// }
 
-	printf("\nJ[i][j]:\n");
-	for(i = 0; i < sys->N; i++){
-		for(j = 0; j < sys->N; j++){
-			printf("%f\t", sys->J[i][j]);
-		}
-		printf("\n");	
-	}
+	// printf("\nJ[i][j]:\n");
+	// for(i = 0; i < sys->N; i++){
+	// 	for(j = 0; j < sys->N; j++){
+	// 		printf("%f\t", sys->J[i][j]);
+	// 	}
+	// 	printf("\n");	
+	// }
 
 	printf("\nEneryg\t\tMagnetization\n");
 	printf("%f\t%f\n\n", sys->energy/sys->N, sys->magnetization/sys->N);

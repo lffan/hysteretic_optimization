@@ -16,14 +16,18 @@ int main(){
 	printf("# Test... SIZE: %d.\n", SIZE);
 
 	int i, j;
-	double energy, magnetization;
+	double energy = 0, magnetization;
 
-	static GLASS_SK sys;
+	GLASS_SK sys;
 	
-	sys = init_sys();
-	print_system_status(&sys);
-	ac_demag(&sys, 2.0);
-	print_system_status(&sys);
+	for(i = 0; i < 50; i++){
+		sys = init_sys();
+		ac_demag(&sys, 1.6);
+		energy += sys.energy;
+		print_system_status(&sys);
+	}
+	printf("The average %f\n", energy);
+
 
 	return 0;
 }

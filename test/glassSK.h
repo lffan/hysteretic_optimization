@@ -1,4 +1,4 @@
-#define SIZE 1024
+#define SIZE 1000
 
 typedef struct{
 	int N;

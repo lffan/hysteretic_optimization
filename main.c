@@ -13,20 +13,17 @@ int main(){
 	seed = seedgen();
 	setr1279(seed);
 
-	printf("# Test... SIZE: %d.\n", SIZE);
+	printf("# Test... SIZE: %d.\n\n", SIZE);
 
-	int i, j;
+	int i, j, times;
 	double energy = 0, magnetization;
 
 	GLASS_SK sys;
-	
-	for(i = 0; i < 50; i++){
-		sys = init_sys();
-		ac_demag(&sys, 1.6);
-		energy += sys.energy;
-		print_system_status(&sys);
-	}
-	printf("The average %f\n", energy);
+	sys = init_sys();
+
+	times = ac_demag(&sys, 2.0);
+	printf("Stable energy: %f\n", sys.energy_stable/sys.N);
+	printf("Cycle times: %d\n", times);
 
 
 	return 0;

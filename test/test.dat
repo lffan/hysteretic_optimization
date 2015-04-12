@@ -1,114 +1,23 @@
-# Test... SIZE: 400.
+# Test... SIZE: 1024.
 Number	Field
-400		0.000000
+1024		0.000000
 
 
 Eneryg		Magnetization
--0.022746	-0.030000
+0.012951	0.009766
 
-Number of unstable spins: 190
 
-What the fuck is going on?
--1.800000
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
-Into Me!!!
+The minimum energy:0.012951
+Number of unstable spins: 548
+
 Number	Field
-400		0.000000
+1024		-0.001128
 
 
 Eneryg		Magnetization
--0.731613	0.065000
+-0.743532	0.126953
 
+
+The minimum energy:0.012951
 Number of unstable spins: 0
 

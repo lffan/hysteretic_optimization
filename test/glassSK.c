@@ -58,6 +58,30 @@ GLASS_SK init_sys(){
 	return sys;
 }
 
+void update_sys(GLASS_SK *sys){
+	int i, j;
+	/* Initialize sys.energy */
+	sys->energy = 0;
+	for(i = 0; i < sys->N; i++){
+		sys->energy += - sys->H * sys->xi[i] * sys->sigma[i];
+		for(j = 0; j < sys->N; j++)
+			sys->energy += - 0.5 * sys->J[i][j] * sys->sigma[i] * sys->sigma[j];
+	}
+
+	/* Initialize sys.magnetization */
+	sys->magnetization = 0;
+	for(i = 0; i < sys->N; i++)
+		sys->magnetization += sys->xi[i] * sys->sigma[i];
+
+	/* Initialize sys.h */
+	for(i = 0; i < sys->N; i++){
+		sys->h[i] = sys->H * sys->xi[i];
+		for(j = 0; j < sys->N; j++)
+			sys->h[i] += sys->J[i][j] * sys->sigma[j];
+	}
+}
+
+
 void identify_unstable(GLASS_SK *sys){
 	// Identity unstable spins, then store their indics in sys.unstable[],
 	// and store the number of unstable spins in sys.unstable_num.
@@ -89,31 +113,6 @@ void flip_spin(GLASS_SK *sys, int s){
 		sys->h[i] += 2 * sys->J[i][s] * sys->sigma[s];
 }
 
-void update_sys(GLASS_SK *sys){
-	int i, j;
-	/* Initialize sys.energy */
-	sys->energy = 0;
-	for(i = 0; i < sys->N; i++){
-		sys->energy += - sys->H * sys->xi[i] * sys->sigma[i];
-		for(j = 0; j < sys->N; j++)
-			sys->energy += - 0.5 * sys->J[i][j] * sys->sigma[i] * sys->sigma[j];
-	}
-	sys->energy_stable = sys->energy;
-
-	/* Initialize sys.magnetization */
-	sys->magnetization = 0;
-	for(i = 0; i < sys->N; i++)
-		sys->magnetization += sys->xi[i] * sys->sigma[i];
-
-	/* Initialize sys.h */
-	for(i = 0; i < sys->N; i++){
-		sys->h[i] = sys->H * sys->xi[i];
-		for(j = 0; j < sys->N; j++)
-			sys->h[i] += sys->J[i][j] * sys->sigma[j];
-	}
-
-}
-
 void quench(GLASS_SK *sys){
 	// Indentify all the unstable spins, then randomly flip one of them.
 	// Update the system after the flipping.
@@ -125,35 +124,19 @@ void quench(GLASS_SK *sys){
 	while(sys->unstable_num > 0){
 		s = ir1279()%sys->unstable_num;
 		flip_spin(sys, sys->unstable[s]);
-		if(sys->energy < sys->energy_stable)
-			sys->energy_stable = sys->energy;
 		identify_unstable(sys);
 	}
 }
 
-// void decrease_field(GLASS_SK *sys, double delta_h){
-// 	// Assume h the decreasement of the external field
-// 	// Update the external fiedl, the energy and the local field
-
-// 	int i;
-// 	sys->H -= delta_h;
-// 	sys->energy += delta_h * sys->magnetization;
-// 	for(i = 0; i < sys->N; i++)
-// 		sys->h[i] -= delta_h * sys->xi[i];
-// }
-
 void half_cycle(GLASS_SK *sys, double H1, double H2){
 	// Quench the system from H1 to H2, with a step of h
-	int i;
+	int i, j;
 	double delta_h;
-	delta_h = (H1 - H2)/100.0;
+	delta_h = (H1 - H2)/10.0;
 	sys->H = H1;
+	update_sys(sys);
 	while(sys->H > H2){
 		quench(sys);
-/*		sys->energy += delta_h * sys->magnetization;
-		for(i = 0; i < sys->N; i++){
-			sys->h[i] -= delta_h * sys->xi[i];
-		}*/
 		sys->H -= delta_h;
 		update_sys(sys);
 	}
@@ -161,19 +144,16 @@ void half_cycle(GLASS_SK *sys, double H1, double H2){
 
 void ac_demag(GLASS_SK *sys, double H0){
 	// AC demagnetization
-	printf("What the fuck is going on?\n");
 	double h1, h2;
 	h1 = H0;
 	h2 = - 0.9 * h1;
-	printf("%f\n", h2);
-	while(fabs(h2) > 0.0001){
-		printf("Into Me!!!\n");
+	while(fabs(h2) > 0.001){
 		half_cycle(sys, h1, h2);
 		h1 = h2;
 		h2 = - 0.9 * h2;
 	}
-	sys->H = 0;
-	quench(sys);
+	// sys->H = 0;
+	// quench(sys);
 }
 
 void print_system_status(GLASS_SK *sys){
@@ -197,6 +177,7 @@ void print_system_status(GLASS_SK *sys){
 
 	printf("\nEneryg\t\tMagnetization\n");
 	printf("%f\t%f\n\n", sys->energy/sys->N, sys->magnetization/sys->N);
+	printf("\nThe minimum energy:%f\n", sys->energy_stable/sys->N);
 
 	/* Test teh indentify_unstable*/
 	// printf("\nUnstable spins:\n");

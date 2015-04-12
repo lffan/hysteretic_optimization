@@ -1,4 +1,4 @@
-#define SIZE 400
+#define SIZE 1024
 
 typedef struct{
 	int N;
@@ -18,10 +18,9 @@ typedef struct{
 
 GLASS_SK init_sys();
 void identify_unstable(GLASS_SK *);
+void update_sys(GLASS_SK *sys);
 void flip_spin(GLASS_SK *, int);
 void quench(GLASS_SK *);
-void decrease_field(GLASS_SK *, double);
-void update_sys(GLASS_SK *sys);
 void half_cycle(GLASS_SK *, double, double);
 void ac_demag(GLASS_SK *, double);
 void print_system_status(GLASS_SK *);

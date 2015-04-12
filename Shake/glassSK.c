@@ -5,7 +5,6 @@
 
 // glassSK.c -- v.1.0 -- 04/12/2015 -- Longfei Fan
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>

@@ -22,9 +22,10 @@ int main(){
 	seed = seedgen();
 	setr1279(seed);
 
-	FILE *fp1 = fopen("en_mag.dat", "w");
+	FILE *fp1 = fopen("ACD_32.dat", "w", N);
 	
 	int i, times;
+	GLASS_SK sys;
 	double cycle = 0;
 	double e, e2, m, m2;
 	double e_s = 0, e2_s = 0, m_s = 0, m2_s = 0;
@@ -32,7 +33,6 @@ int main(){
 	fprintf(fp1, "# Energy\tEnergy^2\tMagnetic\tMagnet^2\tCycles\n");
 	for(i = 0; i < INSTANCES; i++){
 		/* Initialize one instance */
-		GLASS_SK sys;
 		sys = init_sys();
 		/* Apply ac demagniztion procedure */
 		times = ac_demag(&sys, H0);
@@ -60,7 +60,7 @@ int main(){
 	m_s /= INSTANCES;
 	m2_s /= INSTANCES;
 
-	FILE *fp2 = fopen("en_mag_ave.dat", "w");
+	FILE *fp2 = fopen("ACD_ave.dat", "w");
 	fprintf(fp2, "# En_Ave\tEn2_Ave\t\tMag_Ave\t\tMag2_Ave\tCycles_Ave\n");
 	fprintf(fp2, "%.6f\t%.6f\t%.6f\t%.6f\t%f\n", e_s, e2_s, m_s, m2_s, cycle);
 	fclose(fp2);

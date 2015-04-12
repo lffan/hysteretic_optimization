@@ -1,5 +1,11 @@
-#define PI 3.14159265359
-#define SIZE 1000
+/********************************************************************/
+/*						PHYS-619 Project							*/
+/*	  Hysteretic optimization for Sherrington-Kirkpatrick model		*/
+/********************************************************************/
+
+// glassSK.h -- v.1.0 -- 04/12/2015 -- Longfei Fan
+
+# define SIZE 1024
 
 typedef struct{
 	int N;

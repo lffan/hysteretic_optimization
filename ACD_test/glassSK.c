@@ -1,3 +1,11 @@
+/********************************************************************/
+/*						PHYS-619 Project							*/
+/*	  Hysteretic optimization for Sherrington-Kirkpatrick model		*/
+/********************************************************************/
+
+// glassSK.c -- v.1.0 -- 04/12/2015 -- Longfei Fan
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -5,6 +13,7 @@
 #include "glassSK.h"
 #include "r1279.h"
 
+#define PI 3.14159265359
 double gauss(){
 	// Gaussian number generator: <x> = 0, sigma = 1
 
@@ -60,6 +69,7 @@ void update_sys(GLASS_SK *sys){
 	// calculate the magnetization, the energy, and the local field.
 	
 	int i, j;
+
 	/* sys.magnetization */
 	sys->magnetization = 0;
 	for(i = 0; i < sys->N; i++)
@@ -77,6 +87,7 @@ void update_sys(GLASS_SK *sys){
 		for(j = 0; j < sys->N; j++)
 			sys->h[i] += sys->J[i][j] * sys->sigma[j];
 	}
+
 }
 
 void identify_unstable(GLASS_SK *sys){
@@ -128,21 +139,29 @@ int quench(GLASS_SK *sys){
 	return flag;
 }
 
+void decrease_H(GLASS_SK *sys, double delta){
+	/* Decrease the external field by delta, and update the system */
+	sys->H -= delta;
+	sys->energy += delta * sys->magnetization;
+	int i;
+	for(i = 0; i < sys->N; i++)
+		sys->h[i] -= delta * sys->xi[i];
+}
+
 int half_cycle(GLASS_SK *sys, double H1, double H2){
 	// Quench the system from H1 to H2 with a step of h
 	// When go across 0, record the minimum energy and the best configuration
 
 	int i, j, quench_time = 0;
-	double h;
+	double delta;
 
-	/* Quench form H1 to 0 */
+	/* Quench at H1 */
+	delta = H1 / 20.0;
 	sys->H = H1;
-	h = H1 / 20.0;
-	update_sys(sys);
+	update_sys(sys);	/* Calibrate the status of the system */
 	quench_time += quench(sys);
 	for(i = 1; i < 20; i++){
-		sys->H -= h;
-		update_sys(sys);
+		decrease_H(sys, delta);
 		quench_time += quench(sys);
 	}
 
@@ -158,34 +177,38 @@ int half_cycle(GLASS_SK *sys, double H1, double H2){
 	}
 
 	/* Quench from 0 to H2 */
-	h = - H2 / 20.0;
+	delta = - H2 / 20.0;
 	for(i = 0; i < 20; i++){
-		sys->H -= h;
-		update_sys(sys);
+		decrease_H(sys, delta);
 		quench_time += quench(sys);
 	}
 
 	return quench_time;
 }
 
-int ac_demag(GLASS_SK *sys, double H0){
-	// AC demagnetization starting from H0
+int ac_demag(GLASS_SK *sys, double H){
+	// AC demagnetization starting from H
 
-	int i, j, quench_time, cycle_time;
+	int i, j, quench_time, cycle_time = 0 ;
 	double h1, h2;
-	h1 = H0;
-	h2 = - rand_gamma() * h1;
-	quench_time = half_cycle(sys, h1, h2);
-	if(quench_time > 0){
-		cycle_time += 1;
-	}
-	/* Repeat cycles until there is no quench happening in one cycle */
-	while(quench_time > 0){
+
+	/* Repeat cycles until no more quech is needed */
+	h2 = H;
+	do{
 		h1 = h2;
 		h2 = - rand_gamma() * h1;
 		quench_time = half_cycle(sys, h1, h2);
 		cycle_time += 1;
-	}
+	}while(quench_time > 0);
+
+	/* Bring the system back to H = 0 */
+	sys->H = 0;
+	update_sys(sys);
+	identify_unstable(sys);
+	/* Calculate the magnetization with no xi[i] factors */
+	sys->magnetization = 0;
+	for(i = 0; i < sys->N; i++)
+		sys->magnetization += sys->sigma[i];
 
 	return cycle_time;
 }
@@ -198,33 +221,29 @@ void print_system_status(GLASS_SK *sys){
 	// Print out the current status of the system
 
 	int i, j;
-	printf("Number\tField\n");
+	printf("Size\tExternal Field\n");
 	printf("%d\t\t%f\n", sys->N, sys->H);
-	// printf("sigma\txi\th\n");
-	// for(i = 0; i <sys->N; i++){
-	// 	printf("%d\t%d\t%f\n", sys->sigma[i], sys->xi[i], sys->h[i]);
-	// }
+	printf("sigma\txi\th\n");
+	for(i = 0; i <sys->N; i++)
+		printf("%d\t%d\t%f\n", sys->sigma[i], sys->xi[i], sys->h[i]);
 
-	// printf("\nJ[i][j]:\n");
-	// for(i = 0; i < sys->N; i++){
-	// 	for(j = 0; j < sys->N; j++){
-	// 		printf("%f\t", sys->J[i][j]);
-	// 	}
-	// 	printf("\n");	
-	// }
-
-	// for(i = 0; i < sys->N; i++)
-	// 	printf("%4d\t%f\n", sys->sigma[i], sys->h[i]);
+	printf("\nJ[i][j]:\n");
+	for(i = 0; i < sys->N; i++){
+		for(j = 0; j < sys->N; j++)
+			printf("%f\t", sys->J[i][j]);
+		printf("\n");	
+	}
 
 	printf("\nEneryg\t\tMagnetization\n");
 	printf("%f\t%f\n\n", sys->energy/sys->N, sys->magnetization/sys->N);
-	// printf("\nThe minimum energy:%f\n\n", sys->energy_stable);
+	printf("\nThe optimal energy:%f\n\n", sys->energy_stable/sys->N);
 
-	/* Test teh indentify_unstable*/
-	// printf("\nUnstable spins:\n");
-	// for(i = 0; i < sys->N; i++){
-	// 	printf("%d\n", sys->unstable[i]);
-	// }
+	for(i = 0; i < sys->N; i++)
+		printf("%4d\t%f\n", sys->sigma[i], sys->h[i]);
 
-	// printf("Number of unstable spins: %d\n\n", sys->unstable_num);
+	printf("\nUnstable spins:\n");
+	for(i = 0; i < sys->N; i++)
+		printf("%d\n", sys->unstable[i]);
+
+	printf("Number of unstable spins: %d\n\n", sys->unstable_num);
 }

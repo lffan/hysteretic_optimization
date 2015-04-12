@@ -13,6 +13,8 @@ int main(){
 	seed = seedgen();
 	setr1279(seed);
 
+	printf("# Test... SIZE: %d.\n", SIZE);
+
 	int i, j;
 	double energy, magnetization;
 
@@ -20,7 +22,7 @@ int main(){
 	
 	sys = init_sys();
 	print_system_status(&sys);
-	quench(&sys);
+	ac_demag(&sys, 2.0);
 	print_system_status(&sys);
 
 	return 0;

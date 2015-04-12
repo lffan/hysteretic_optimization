@@ -1,4 +1,4 @@
-#define SIZE 128
+#define SIZE 1024
 #define H1 0.0
 
 typedef struct{

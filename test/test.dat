@@ -1,352 +1,946 @@
 # Test... SIZE: 1000.
-Number	Field
-1000		-0.011311
 
-
-Eneryg		Magnetization
--734.073392	26.000000
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		0.100000
 
 Eneryg		Magnetization
--744.663613	72.000000
+-0.720687	0.330000
 
 Number	Field
-1000		-0.011311
-
+1000		0.000000
 
 Eneryg		Magnetization
--743.512921	66.000000
+-0.705044	0.246000
 
 Number	Field
-1000		-0.011311
-
+1000		-1.838526
 
 Eneryg		Magnetization
--740.278256	132.000000
+-1.870621	-0.892000
+
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		-0.091926
 
 Eneryg		Magnetization
--741.321192	64.000000
+-0.700744	-0.370000
 
 Number	Field
-1000		-0.011311
-
+1000		0.000000
 
 Eneryg		Magnetization
--741.705912	58.000000
+-0.708294	-0.222000
 
 Number	Field
-1000		-0.011311
-
+1000		1.522272
 
 Eneryg		Magnetization
--740.499820	34.000000
+-1.586191	0.842000
+
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		0.076114
 
 Eneryg		Magnetization
--749.443759	56.000000
+-0.668955	0.402000
 
 Number	Field
-1000		-0.011311
-
+1000		0.000000
 
 Eneryg		Magnetization
--735.297508	152.000000
+-0.688110	0.224000
 
 Number	Field
-1000		-0.011311
-
+1000		-1.424301
 
 Eneryg		Magnetization
--733.295616	116.000000
+-1.502374	-0.822000
+
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		-0.071215
 
 Eneryg		Magnetization
--735.234920	-8.000000
+-0.693753	-0.360000
 
 Number	Field
-1000		-0.011311
-
+1000		0.000000
 
 Eneryg		Magnetization
--747.176950	74.000000
+-0.676124	-0.322000
 
 Number	Field
-1000		-0.011311
-
+1000		1.290727
 
 Eneryg		Magnetization
--734.531749	62.000000
+-1.381382	0.758000
+
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		0.064536
 
 Eneryg		Magnetization
--739.739914	82.000000
+-0.703794	0.340000
 
 Number	Field
-1000		-0.011311
-
+1000		0.000000
 
 Eneryg		Magnetization
--731.892012	98.000000
+-0.701847	0.248000
 
 Number	Field
-1000		-0.011311
-
+1000		-1.123695
 
 Eneryg		Magnetization
--741.189554	72.000000
+-1.235811	-0.736000
+
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		-0.056185
 
 Eneryg		Magnetization
--738.185479	6.000000
+-0.692768	-0.310000
 
 Number	Field
-1000		-0.011311
-
+1000		0.000000
 
 Eneryg		Magnetization
--737.275925	70.000000
+-0.705283	-0.178000
 
 Number	Field
-1000		-0.011311
-
+1000		1.009527
 
 Eneryg		Magnetization
--728.208835	54.000000
+-1.163841	0.710000
+
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		0.050476
 
 Eneryg		Magnetization
--737.957465	118.000000
+-0.726848	0.242000
 
 Number	Field
-1000		-0.011311
-
+1000		0.000000
 
 Eneryg		Magnetization
--742.533266	42.000000
+-0.715905	0.232000
 
 Number	Field
-1000		-0.011311
-
+1000		-0.827344
 
 Eneryg		Magnetization
--736.808918	68.000000
+-0.969670	-0.506000
+
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		-0.041367
 
 Eneryg		Magnetization
--752.430566	70.000000
+-0.705049	-0.194000
 
 Number	Field
-1000		-0.011311
-
+1000		0.000000
 
 Eneryg		Magnetization
--734.935033	50.000000
+-0.706298	-0.148000
 
 Number	Field
-1000		-0.011311
-
+1000		0.690891
 
 Eneryg		Magnetization
--742.918559	56.000000
+-0.932881	0.432000
+
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		0.034545
 
 Eneryg		Magnetization
--734.192181	70.000000
+-0.730453	0.216000
 
 Number	Field
-1000		-0.011311
-
+1000		0.000000
 
 Eneryg		Magnetization
--741.457151	94.000000
+-0.725580	0.198000
 
 Number	Field
-1000		-0.011311
-
+1000		-0.595792
 
 Eneryg		Magnetization
--747.433830	98.000000
+-0.829863	-0.266000
+
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		-0.029790
 
 Eneryg		Magnetization
--739.044907	70.000000
+-0.714330	-0.148000
 
 Number	Field
-1000		-0.011311
-
+1000		0.000000
 
 Eneryg		Magnetization
--750.041177	8.000000
+-0.722771	-0.086000
 
 Number	Field
-1000		-0.011311
-
+1000		0.535771
 
 Eneryg		Magnetization
--743.500754	112.000000
+-0.850663	0.318000
+
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		0.026789
 
 Eneryg		Magnetization
--742.826283	46.000000
+-0.727164	0.172000
 
 Number	Field
-1000		-0.011311
-
+1000		0.000000
 
 Eneryg		Magnetization
--733.555949	128.000000
+-0.722730	0.168000
 
 Number	Field
-1000		-0.011311
-
+1000		-0.523587
 
 Eneryg		Magnetization
--728.593936	22.000000
+-0.795437	-0.196000
+
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		-0.026179
 
 Eneryg		Magnetization
--739.333366	56.000000
+-0.725044	-0.104000
 
 Number	Field
-1000		-0.011311
-
+1000		0.000000
 
 Eneryg		Magnetization
--737.571889	18.000000
+-0.725106	-0.080000
 
 Number	Field
-1000		-0.011311
-
+1000		0.497278
 
 Eneryg		Magnetization
--736.750222	84.000000
+-0.835247	0.304000
+
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		0.024864
 
 Eneryg		Magnetization
--742.904366	18.000000
+-0.732502	0.134000
 
 Number	Field
-1000		-0.011311
-
+1000		0.000000
 
 Eneryg		Magnetization
--737.978391	68.000000
+-0.729177	0.132000
 
 Number	Field
-1000		-0.011311
-
+1000		-0.477968
 
 Eneryg		Magnetization
--742.771867	68.000000
+-0.770892	-0.162000
+
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		-0.023898
 
 Eneryg		Magnetization
--743.456832	34.000000
+-0.723850	-0.076000
 
 Number	Field
-1000		-0.011311
-
+1000		0.000000
 
 Eneryg		Magnetization
--744.834141	100.000000
+-0.723151	-0.064000
 
 Number	Field
-1000		-0.011311
-
+1000		0.451567
 
 Eneryg		Magnetization
--734.154447	36.000000
+-0.816679	0.248000
+
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		0.022578
 
 Eneryg		Magnetization
--743.051098	12.000000
+-0.729742	0.176000
 
 Number	Field
-1000		-0.011311
-
+1000		0.000000
 
 Eneryg		Magnetization
--747.317247	106.000000
+-0.731337	0.134000
 
 Number	Field
-1000		-0.011311
-
+1000		-0.450503
 
 Eneryg		Magnetization
--733.180045	22.000000
+-0.765528	-0.120000
+
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		-0.022525
 
 Eneryg		Magnetization
--734.725078	112.000000
+-0.722034	-0.086000
 
 Number	Field
-1000		-0.011311
-
+1000		0.000000
 
 Eneryg		Magnetization
--754.632265	56.000000
+-0.720850	-0.076000
 
 Number	Field
-1000		-0.011311
-
+1000		0.419509
 
 Eneryg		Magnetization
--743.924165	68.000000
+-0.811577	0.286000
+
+########## half_cycle ############
 
 Number	Field
-1000		-0.011311
-
+1000		0.020975
 
 Eneryg		Magnetization
--755.392524	12.000000
+-0.721556	0.188000
 
-The average -37017.735244
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.721035	0.168000
+
+Number	Field
+1000		-0.414218
+
+Eneryg		Magnetization
+-0.754834	-0.074000
+
+########## half_cycle ############
+
+Number	Field
+1000		-0.020711
+
+Eneryg		Magnetization
+-0.738993	-0.006000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.738869	-0.006000
+
+Number	Field
+1000		0.354509
+
+Eneryg		Magnetization
+-0.786072	0.178000
+
+########## half_cycle ############
+
+Number	Field
+1000		0.017725
+
+Eneryg		Magnetization
+-0.735335	0.144000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.733264	0.136000
+
+Number	Field
+1000		-0.345795
+
+Eneryg		Magnetization
+-0.746995	-0.056000
+
+########## half_cycle ############
+
+Number	Field
+1000		-0.017290
+
+Eneryg		Magnetization
+-0.743654	0.014000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.743896	0.014000
+
+Number	Field
+1000		0.319712
+
+Eneryg		Magnetization
+-0.785036	0.166000
+
+########## half_cycle ############
+
+Number	Field
+1000		0.015986
+
+Eneryg		Magnetization
+-0.744992	0.110000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.745714	0.092000
+
+Number	Field
+1000		-0.311543
+
+Eneryg		Magnetization
+-0.734627	0.026000
+
+########## half_cycle ############
+
+Number	Field
+1000		-0.015577
+
+Eneryg		Magnetization
+-0.738838	-0.030000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.738629	-0.022000
+
+Number	Field
+1000		0.261468
+
+Eneryg		Magnetization
+-0.766365	0.098000
+
+########## half_cycle ############
+
+Number	Field
+1000		0.013073
+
+Eneryg		Magnetization
+-0.744973	0.102000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.744087	0.086000
+
+Number	Field
+1000		-0.255965
+
+Eneryg		Magnetization
+-0.729351	0.042000
+
+########## half_cycle ############
+
+Number	Field
+1000		-0.012798
+
+Eneryg		Magnetization
+-0.741352	0.042000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.741930	0.044000
+
+Number	Field
+1000		0.248192
+
+Eneryg		Magnetization
+-0.770960	0.122000
+
+########## half_cycle ############
+
+Number	Field
+1000		0.012410
+
+Eneryg		Magnetization
+-0.745645	0.100000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.744404	0.100000
+
+Number	Field
+1000		-0.220325
+
+Eneryg		Magnetization
+-0.728303	0.072000
+
+########## half_cycle ############
+
+Number	Field
+1000		-0.011016
+
+Eneryg		Magnetization
+-0.740688	0.038000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.741279	0.046000
+
+Number	Field
+1000		0.209224
+
+Eneryg		Magnetization
+-0.767134	0.122000
+
+########## half_cycle ############
+
+Number	Field
+1000		0.010461
+
+Eneryg		Magnetization
+-0.744672	0.112000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.743500	0.112000
+
+Number	Field
+1000		-0.203626
+
+Eneryg		Magnetization
+-0.739353	0.016000
+
+########## half_cycle ############
+
+Number	Field
+1000		-0.010181
+
+Eneryg		Magnetization
+-0.744532	0.030000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.744877	0.032000
+
+Number	Field
+1000		0.166010
+
+Eneryg		Magnetization
+-0.758804	0.080000
+
+########## half_cycle ############
+
+Number	Field
+1000		0.008301
+
+Eneryg		Magnetization
+-0.746558	0.076000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.745933	0.074000
+
+Number	Field
+1000		-0.157897
+
+Eneryg		Magnetization
+-0.736268	0.058000
+
+########## half_cycle ############
+
+Number	Field
+1000		-0.007895
+
+Eneryg		Magnetization
+-0.745580	0.068000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746117	0.068000
+
+Number	Field
+1000		0.152011
+
+Eneryg		Magnetization
+-0.760560	0.104000
+
+########## half_cycle ############
+
+Number	Field
+1000		0.007601
+
+Eneryg		Magnetization
+-0.747010	0.088000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746351	0.086000
+
+Number	Field
+1000		-0.143537
+
+Eneryg		Magnetization
+-0.736092	0.068000
+
+########## half_cycle ############
+
+Number	Field
+1000		-0.007177
+
+Eneryg		Magnetization
+-0.745813	0.076000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746359	0.076000
+
+Number	Field
+1000		0.134606
+
+Eneryg		Magnetization
+-0.758452	0.094000
+
+########## half_cycle ############
+
+Number	Field
+1000		0.006730
+
+Eneryg		Magnetization
+-0.746930	0.088000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746344	0.086000
+
+Number	Field
+1000		-0.124293
+
+Eneryg		Magnetization
+-0.737097	0.074000
+
+########## half_cycle ############
+
+Number	Field
+1000		-0.006215
+
+Eneryg		Magnetization
+-0.745886	0.076000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746359	0.076000
+
+Number	Field
+1000		0.100638
+
+Eneryg		Magnetization
+-0.755296	0.090000
+
+########## half_cycle ############
+
+Number	Field
+1000		0.005032
+
+Eneryg		Magnetization
+-0.746784	0.088000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746351	0.086000
+
+Number	Field
+1000		-0.089699
+
+Eneryg		Magnetization
+-0.739657	0.074000
+
+########## half_cycle ############
+
+Number	Field
+1000		-0.004485
+
+Eneryg		Magnetization
+-0.746018	0.076000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746359	0.076000
+
+Number	Field
+1000		0.088575
+
+Eneryg		Magnetization
+-0.754210	0.090000
+
+########## half_cycle ############
+
+Number	Field
+1000		0.004429
+
+Eneryg		Magnetization
+-0.746727	0.088000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746344	0.086000
+
+Number	Field
+1000		-0.086690
+
+Eneryg		Magnetization
+-0.739879	0.074000
+
+########## half_cycle ############
+
+Number	Field
+1000		-0.004334
+
+Eneryg		Magnetization
+-0.746029	0.076000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746359	0.076000
+
+Number	Field
+1000		0.085699
+
+Eneryg		Magnetization
+-0.753951	0.090000
+
+########## half_cycle ############
+
+Number	Field
+1000		0.004285
+
+Eneryg		Magnetization
+-0.746718	0.088000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746351	0.086000
+
+Number	Field
+1000		-0.084516
+
+Eneryg		Magnetization
+-0.740040	0.074000
+
+########## half_cycle ############
+
+Number	Field
+1000		-0.004226
+
+Eneryg		Magnetization
+-0.746038	0.076000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746359	0.076000
+
+Number	Field
+1000		0.084058
+
+Eneryg		Magnetization
+-0.753804	0.090000
+
+########## half_cycle ############
+
+Number	Field
+1000		0.004203
+
+Eneryg		Magnetization
+-0.746711	0.088000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746344	0.086000
+
+Number	Field
+1000		-0.079626
+
+Eneryg		Magnetization
+-0.740402	0.074000
+
+########## half_cycle ############
+
+Number	Field
+1000		-0.003981
+
+Eneryg		Magnetization
+-0.746056	0.076000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746359	0.076000
+
+Number	Field
+1000		0.069768
+
+Eneryg		Magnetization
+-0.751882	0.080000
+
+########## half_cycle ############
+
+Number	Field
+1000		0.003488
+
+Eneryg		Magnetization
+-0.746882	0.086000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746582	0.086000
+
+Number	Field
+1000		-0.066250
+
+Eneryg		Magnetization
+-0.741289	0.076000
+
+########## half_cycle ############
+
+Number	Field
+1000		-0.003312
+
+Eneryg		Magnetization
+-0.746277	0.082000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746549	0.082000
+
+Number	Field
+1000		0.057257
+
+Eneryg		Magnetization
+-0.751506	0.086000
+
+########## half_cycle ############
+
+Number	Field
+1000		0.002863
+
+Eneryg		Magnetization
+-0.746828	0.086000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746582	0.086000
+
+Number	Field
+1000		-0.054126
+
+Eneryg		Magnetization
+-0.742210	0.076000
+
+########## half_cycle ############
+
+Number	Field
+1000		-0.002706
+
+Eneryg		Magnetization
+-0.746327	0.082000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746549	0.082000
+
+Number	Field
+1000		0.044734
+
+Eneryg		Magnetization
+-0.750429	0.086000
+
+########## half_cycle ############
+
+Number	Field
+1000		0.002237
+
+Eneryg		Magnetization
+-0.746774	0.086000
+
+Number	Field
+1000		0.000000
+
+Eneryg		Magnetization
+-0.746582	0.086000
+
+Number	Field
+1000		-0.040974
+
+Eneryg		Magnetization
+-0.743058	0.086000
+
+Quench time: 0	Final external field: -0.040974
+
+Stable energy: -0.746582
+Cycle times: 47

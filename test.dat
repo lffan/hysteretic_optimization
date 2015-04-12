@@ -1,23 +1,352 @@
-# Test... SIZE: 1024.
+# Test... SIZE: 1000.
 Number	Field
-1024		0.000000
+1000		-0.011311
 
 
 Eneryg		Magnetization
-0.012951	0.009766
-
-
-The minimum energy:0.012951
-Number of unstable spins: 548
+-734.073392	26.000000
 
 Number	Field
-1024		-0.001128
+1000		-0.011311
 
 
 Eneryg		Magnetization
--0.743532	0.126953
+-744.663613	72.000000
+
+Number	Field
+1000		-0.011311
 
 
-The minimum energy:0.012951
-Number of unstable spins: 0
+Eneryg		Magnetization
+-743.512921	66.000000
 
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-740.278256	132.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-741.321192	64.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-741.705912	58.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-740.499820	34.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-749.443759	56.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-735.297508	152.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-733.295616	116.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-735.234920	-8.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-747.176950	74.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-734.531749	62.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-739.739914	82.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-731.892012	98.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-741.189554	72.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-738.185479	6.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-737.275925	70.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-728.208835	54.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-737.957465	118.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-742.533266	42.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-736.808918	68.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-752.430566	70.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-734.935033	50.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-742.918559	56.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-734.192181	70.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-741.457151	94.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-747.433830	98.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-739.044907	70.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-750.041177	8.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-743.500754	112.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-742.826283	46.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-733.555949	128.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-728.593936	22.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-739.333366	56.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-737.571889	18.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-736.750222	84.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-742.904366	18.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-737.978391	68.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-742.771867	68.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-743.456832	34.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-744.834141	100.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-734.154447	36.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-743.051098	12.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-747.317247	106.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-733.180045	22.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-734.725078	112.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-754.632265	56.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-743.924165	68.000000
+
+Number	Field
+1000		-0.011311
+
+
+Eneryg		Magnetization
+-755.392524	12.000000
+
+The average -37017.735244

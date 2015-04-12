@@ -11,14 +11,14 @@ GLASS_SK init_sys(){
 	// Return an initialized GLASS_SK structure.
 
 	GLASS_SK sys;
-	sys.N = SIZE;	/* number of spins */
-	sys.H = 0;		/* external field */
+
+	/* Initialize sys.N */
+	sys.N = SIZE;
 
 	int i, j;
 	/* Initialize sys.sigma, sys.xi */
 	for(i = 0; i < sys.N; i++){
-		sys.sigma[i] = 1;
-		sys.xi[i] = ir1279()%2 * 2 - 1;
+		sys.sigma[i] = sys.xi[i] = ir1279()%2 * 2 - 1;
 	}
 
 	/* Initialize sys.J: allocate memory and asign values */
@@ -31,49 +31,26 @@ GLASS_SK init_sys(){
 			sys.J[i][j] = sys.J[j][i] = gauss()/sqrt(sys.N);
 	}
 
-	/* Initialize sys.energy */
-	sys.energy = 0;
-	for(i = 0; i < sys.N; i++){
-		sys.energy += - sys.H * sys.xi[i] * sys.sigma[i];
-		for(j = 0; j < sys.N; j++)
-			sys.energy += - 0.5 * sys.J[i][j] * sys.sigma[i] * sys.sigma[j];
-	}
-	sys.energy_stable = sys.energy;
-
-	/* Initialize sys.magnetization */
-	sys.magnetization = 0;
-	for(i = 0; i < sys.N; i++)
-		sys.magnetization += sys.xi[i] * sys.sigma[i];
-
-	/* Initialize sys.h */
-	for(i = 0; i < sys.N; i++){
-		sys.h[i] = sys.H * sys.xi[i];
-		for(j = 0; j < sys.N; j++)
-			sys.h[i] += sys.J[i][j] * sys.sigma[j];
-	}
-
-	/* Initialize unstable spins */
-	identify_unstable(&sys);
-
 	return sys;
 }
 
 void update_sys(GLASS_SK *sys){
+	// Given sys.N, sys.H, sys.sigma[], sys.J[][], and sys.xi[],
+	// calculate the magnetization, the energy, and the local field.
+	
 	int i, j;
-	/* Initialize sys.energy */
-	sys->energy = 0;
-	for(i = 0; i < sys->N; i++){
-		sys->energy += - sys->H * sys->xi[i] * sys->sigma[i];
-		for(j = 0; j < sys->N; j++)
-			sys->energy += - 0.5 * sys->J[i][j] * sys->sigma[i] * sys->sigma[j];
-	}
-
-	/* Initialize sys.magnetization */
+	/* sys.magnetization */
 	sys->magnetization = 0;
 	for(i = 0; i < sys->N; i++)
 		sys->magnetization += sys->xi[i] * sys->sigma[i];
 
-	/* Initialize sys.h */
+	/* sys.energy */
+	sys->energy = - sys->H * sys->magnetization;
+	for(i = 0; i < sys->N; i++)
+		for(j = 0; j < sys->N; j++)
+			sys->energy += - 0.5 * sys->J[i][j] * sys->sigma[i] * sys->sigma[j];
+
+	/* local field: sys.h */
 	for(i = 0; i < sys->N; i++){
 		sys->h[i] = sys->H * sys->xi[i];
 		for(j = 0; j < sys->N; j++)
@@ -81,10 +58,9 @@ void update_sys(GLASS_SK *sys){
 	}
 }
 
-
 void identify_unstable(GLASS_SK *sys){
 	// Identity unstable spins, then store their indics in sys.unstable[],
-	// and store the number of unstable spins in sys.unstable_num.
+	// and store the total number of unstable spins in sys.unstable_num.
 	
 	int i;
 	sys->unstable_num = 0;
@@ -119,7 +95,6 @@ void quench(GLASS_SK *sys){
 	// Repeat untill all the spins are stable.
 
 	int i, j, s;
-	double energy, magnetization;
 	identify_unstable(sys);
 	while(sys->unstable_num > 0){
 		s = ir1279()%sys->unstable_num;
@@ -129,17 +104,12 @@ void quench(GLASS_SK *sys){
 }
 
 void half_cycle(GLASS_SK *sys, double H1, double H2){
-	// Quench the system from H1 to H2, with a step of h
+	// Quench the system from H1 to H2 with a step of h
+	// When go across 0, record the minimum energy and the best configuration
+
 	int i, j;
-	double delta_h;
-	delta_h = (H1 - H2)/10.0;
+	double delta_h = 0.01;
 	sys->H = H1;
-	update_sys(sys);
-	while(sys->H > H2){
-		quench(sys);
-		sys->H -= delta_h;
-		update_sys(sys);
-	}
 }
 
 void ac_demag(GLASS_SK *sys, double H0){
@@ -147,7 +117,7 @@ void ac_demag(GLASS_SK *sys, double H0){
 	double h1, h2;
 	h1 = H0;
 	h2 = - 0.9 * h1;
-	while(fabs(h2) > 0.001){
+	while(fabs(h2) > 0.01){
 		half_cycle(sys, h1, h2);
 		h1 = h2;
 		h2 = - 0.9 * h2;
@@ -175,9 +145,12 @@ void print_system_status(GLASS_SK *sys){
 	// 	printf("\n");	
 	// }
 
+	// for(i = 0; i < sys->N; i++)
+	// 	printf("%4d\t%f\n", sys->sigma[i], sys->h[i]);
+
 	printf("\nEneryg\t\tMagnetization\n");
-	printf("%f\t%f\n\n", sys->energy/sys->N, sys->magnetization/sys->N);
-	printf("\nThe minimum energy:%f\n", sys->energy_stable/sys->N);
+	printf("%f\t%f\n\n", sys->energy, sys->magnetization);
+	// printf("\nThe minimum energy:%f\n\n", sys->energy_stable);
 
 	/* Test teh indentify_unstable*/
 	// printf("\nUnstable spins:\n");
@@ -185,5 +158,5 @@ void print_system_status(GLASS_SK *sys){
 	// 	printf("%d\n", sys->unstable[i]);
 	// }
 
-	printf("Number of unstable spins: %d\n\n", sys->unstable_num);
+	// printf("Number of unstable spins: %d\n\n", sys->unstable_num);
 }

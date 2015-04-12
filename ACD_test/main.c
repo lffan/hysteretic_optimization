@@ -36,7 +36,7 @@ int main(){
 		sys = init_sys();
 		/* Apply ac demagniztion procedure */
 		times = ac_demag(&sys, H0);
-		printf("ACD done! Ustable spins: %d\n", sys.unstable_num);
+		// printf("ACD done! Ustable spins: %d\n", sys.unstable_num);
 		/* Output the resutls */
 		e = sys.energy_stable/sys.N;
 		e2 = pow(e, 2);
@@ -49,6 +49,8 @@ int main(){
 		e2_s += e2;
 		m_s += m;
 		m2_s += m2;
+		/* Free the space */
+		free_J(&sys);
 	}
 	fclose(fp1);
 

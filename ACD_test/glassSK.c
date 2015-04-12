@@ -64,6 +64,15 @@ GLASS_SK init_sys(){
 	return sys;
 }
 
+void free_J(GLASS_SK *sys){
+	// Free the memory space allocated for sys.J
+
+	int i;
+	for (i=0; i < sys->N; i++)
+		free(sys->J[i]);   
+	free(sys->J);   
+}
+
 void update_sys(GLASS_SK *sys){
 	// Given sys.N, sys.H, sys.sigma[], sys.J[][], and sys.xi[],
 	// calculate the magnetization, the energy, and the local field.

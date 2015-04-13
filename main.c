@@ -22,7 +22,7 @@ int main(){
 	seed = seedgen();
 	setr1279(seed);
 
-	FILE *fp1 = fopen("ACD_512.dat", "w");
+	FILE *fp1 = fopen("ACD_2048.dat", "w");
 	
 	int i, times;
 	GLASS_SK sys;

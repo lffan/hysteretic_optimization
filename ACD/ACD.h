@@ -5,20 +5,22 @@
 
 // glassSK.h -- v.1.0 -- 04/12/2015 -- Longfei Fan
 
-# define SIZE 2048
+# define SIZE 2048	// Number of spins
 
 typedef struct{
-	int N;
-	int sigma[SIZE];
-	int sigma_best[SIZE];
-	double ** J;
-	double energy;
-	double energy_stable;
-	double magnetization;
+	// Sherrington-Kirkpatrick spin glass structure
 
-	double H;
-	int xi[SIZE];
-	double h[SIZE];
+	int N;					/* number of spins */
+	int sigma[SIZE];		/* configuration of spins */
+	int sigma_best[SIZE];	/* optimal configuration */
+	double ** J;			/* interation fators */
+	double energy;			/* system energy */
+	double energy_stable;	/* optimal energy */
+	double magnetization;	/* system magnetization */
+
+	double H;			/* external field */
+	int xi[SIZE];		/* direction of H for each spin */
+	double h[SIZE];		/* local field for each spin */
 
 	int unstable[SIZE];
 	int unstable_num;

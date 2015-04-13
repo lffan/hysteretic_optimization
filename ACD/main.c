@@ -5,14 +5,14 @@
 
 // v.1.0 -- 04/12/2015 -- Longfei Fan
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <math.h>
-# include "r1279.h"
-# include "ACD.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "r1279.h"
+#include "ACD.h"
 
-# define INSTANCES 1000
-# define H0 1.6
+#define INSTANCES 1000
+#define H0 1.6
 
 long seedgen(void);
 

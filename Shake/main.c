@@ -9,7 +9,7 @@
 # include <stdlib.h>
 # include <math.h>
 # include "r1279.h"
-# include "glassSK.h"
+# include "ACD.h"
 
 # define INSTANCES 1000
 # define H0 1.6
@@ -22,7 +22,7 @@ int main(){
 	seed = seedgen();
 	setr1279(seed);
 
-	FILE *fp1 = fopen("ACD_32.dat", "w", N);
+	FILE *fp1 = fopen("ACD_2048.dat", "w");
 	
 	int i, times;
 	GLASS_SK sys;

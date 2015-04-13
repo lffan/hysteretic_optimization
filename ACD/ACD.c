@@ -208,7 +208,7 @@ int half_cycle(GLASS_SK *sys, double H1, double H2){
 /****************************************************************************/
 int ac_demag(GLASS_SK *sys, double H){
 	// AC demagnetization starting from H to 0.
-	// Return the number of half cycles.
+	// Return the number of half cycles in the whole procedure.
 
 	int i, j, quench_time, cycle_time = 0 ;
 	double h1, h2;
@@ -236,7 +236,15 @@ int ac_demag(GLASS_SK *sys, double H){
 
 /****************************************************************************/
 void shake(GLASS_SK *sys, double Hs){
-	// Shake the system: generate a 
+	// Shake the system obtained from a previous ac demagnetizaion.
+	// Firstly generate a new list of sys.xi[]
+	// Secondly apply another ac demagnetization procedure as Hs.
+
+	int i, j;
+
+	/* Generate a new list of sys.xi[] */
+	for(i = 0; i < sys->N; i++)
+		sys.xi[i] = ir1279()%2 * 2 - 1;
 }
 
 /****************************************************************************/

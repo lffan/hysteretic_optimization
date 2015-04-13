@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <malloc.h>
-#include "ACD.h"
+#include "HO.h"
 #include "r1279.h"
 
 /****************************************************************************/
@@ -245,11 +245,14 @@ void shake(GLASS_SK *sys, double Hs){
 	/* Generate a new list of sys.xi[] */
 	for(i = 0; i < sys->N; i++)
 		sys->xi[i] = ir1279()%2 * 2 - 1;
-	sys->H = Hs;
-	update_sys(sys);
-	identify_unstable(sys);
-
+	/* ac demagnetization */
 	ac_demag(sys, Hs);
+}
+
+/****************************************************************************/
+int stop_check(){
+	// Check whether it is OK to stop shaking or not.
+
 }
 
 /****************************************************************************/

@@ -5,7 +5,7 @@
 
 // glassSK.h -- v.1.0 -- 04/12/2015 -- Longfei Fan
 
-# define SIZE 32	/* number of spins */
+# define SIZE 1024	/* number of spins */
 
 typedef struct{
 	// Sherrington-Kirkpatrick spin glass structure
@@ -58,9 +58,12 @@ void decrease_H(GLASS_SK *, double);
 // Return the times of quench in this half cycle.
 int half_cycle(GLASS_SK *, double, double);
 
-// AC demagnetization for H to 0.
+// AC demagnetization from H to 0.
 // Return the total numbers of half cycle.
 int ac_demag(GLASS_SK *, double);
+
+// Shake the system staring from Hs
+void shake(GLASS_SK *, double);
 
 // Print the properties of the current system.
 void print_system_status(GLASS_SK *);

@@ -1,7 +1,7 @@
-/********************************************************************/
-/*						PHYS-619 Project							*/
-/*	  Hysteretic optimization for Sherrington-Kirkpatrick model		*/
-/********************************************************************/
+/****************************************************************************/
+/*								PHYS-619 Project							*/
+/*	  		Hysteretic optimization for Sherrington-Kirkpatrick model		*/
+/****************************************************************************/
 
 // glassSK.c -- v.1.0 -- 04/12/2015 -- Longfei Fan
 
@@ -12,7 +12,9 @@
 #include "ACD.h"
 #include "r1279.h"
 
+/****************************************************************************/
 #define PI 3.14159265359
+
 double gauss(){
 	// Gaussian number generator: <x> = 0, sigma = 1
 
@@ -31,6 +33,7 @@ double rand_gamma(){
 	return g;
 }
 
+/****************************************************************************/
 GLASS_SK init_sys(){
 	// Initialize the Sherrington-Kirkpatrick spin glass system.
 	// Return an initialized GLASS_SK structure.
@@ -72,6 +75,7 @@ void free_J(GLASS_SK *sys){
 	free(sys->J);   
 }
 
+/****************************************************************************/
 void update_sys(GLASS_SK *sys){
 	// Given sys.N, sys.H, sys.sigma[], sys.J[][], and sys.xi[],
 	// calculate the magnetization, the energy, and the local field.
@@ -98,6 +102,7 @@ void update_sys(GLASS_SK *sys){
 
 }
 
+/****************************************************************************/
 void identify_unstable(GLASS_SK *sys){
 	// Identity unstable spins, then store their indics in sys.unstable[],
 	// and store the total number of unstable spins in sys.unstable_num.
@@ -116,6 +121,7 @@ void identify_unstable(GLASS_SK *sys){
 	}
 }
 
+/****************************************************************************/
 void flip_spin(GLASS_SK *sys, int s){
 	// Assume s the index of a flipped spin.
 	// Update the spin, energy, magnetization, and the local field,
@@ -129,15 +135,16 @@ void flip_spin(GLASS_SK *sys, int s){
 		sys->h[i] += 2 * sys->J[i][s] * sys->sigma[s];
 }
 
+/****************************************************************************/
 int quench(GLASS_SK *sys){
 	// Indentify all the unstable spins, then randomly flip one of them.
-	// Update the system after the flipping.
 	// Repeat untill all the spins are stable.
+	// Return a flag to indicate whether any bit flips happen or not.
 
-	int s, flag = 0;
+	int s, flag = 0;	/* flag = 0 indicating no flips happen */
 	identify_unstable(sys);
 	if(sys->unstable_num > 0)
-		flag = 1;
+		flag = 1;		/* flag = 1 indicating at least one flip happens */
 	while(sys->unstable_num > 0){
 		s = ir1279()%sys->unstable_num;
 		flip_spin(sys, sys->unstable[s]);
@@ -147,18 +154,22 @@ int quench(GLASS_SK *sys){
 	return flag;
 }
 
+/****************************************************************************/
 void decrease_H(GLASS_SK *sys, double delta){
 	/* Decrease the external field by delta, and update the system */
+
+	int i;
 	sys->H -= delta;
 	sys->energy += delta * sys->magnetization;
-	int i;
-	for(i = 0; i < sys->N; i++)
+		for(i = 0; i < sys->N; i++)
 		sys->h[i] -= delta * sys->xi[i];
 }
 
+/****************************************************************************/
 int half_cycle(GLASS_SK *sys, double H1, double H2){
-	// Quench the system from H1 to H2 with a step of h
-	// When go across 0, record the minimum energy and the best configuration
+	// Quench the system from H1 to H2 with a step of h.
+	// When it goes across 0, record the optimal energy and the configuration.
+	// Return how many queches happens in a half cycle.
 
 	int i, j, quench_time = 0;
 	double delta;
@@ -194,8 +205,10 @@ int half_cycle(GLASS_SK *sys, double H1, double H2){
 	return quench_time;
 }
 
+/****************************************************************************/
 int ac_demag(GLASS_SK *sys, double H){
-	// AC demagnetization starting from H
+	// AC demagnetization starting from H to 0.
+	// Return the number of half cycles in the whole procedure.
 
 	int i, j, quench_time, cycle_time = 0 ;
 	double h1, h2;
@@ -221,10 +234,25 @@ int ac_demag(GLASS_SK *sys, double H){
 	return cycle_time;
 }
 
-void shake(GLASS_SK *sys){
-	// Shake the system
+/****************************************************************************/
+void shake(GLASS_SK *sys, double Hs){
+	// Shake the system obtained from a previous ac demagnetizaion.
+	// Firstly generate a new list of sys.xi[]
+	// Secondly apply another ac demagnetization procedure as Hs.
+
+	int i, j;
+
+	/* Generate a new list of sys.xi[] */
+	for(i = 0; i < sys->N; i++)
+		sys->xi[i] = ir1279()%2 * 2 - 1;
+	sys->H = Hs;
+	update_sys(sys);
+	identify_unstable(sys);
+
+	ac_demag(sys, Hs);
 }
 
+/****************************************************************************/
 void print_system_status(GLASS_SK *sys){
 	// Print out the current status of the system
 

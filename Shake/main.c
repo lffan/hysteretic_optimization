@@ -5,14 +5,14 @@
 
 // v.1.0 -- 04/12/2015 -- Longfei Fan
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <math.h>
-# include "r1279.h"
-# include "ACD.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "r1279.h"
+#include "ACD.h"
 
-# define INSTANCES 1000
-# define H0 1.6
+#define INSTANCES 1000
+#define H0 1.6
 
 long seedgen(void);
 
@@ -22,7 +22,7 @@ int main(){
 	seed = seedgen();
 	setr1279(seed);
 
-	FILE *fp1 = fopen("ACD_2048.dat", "w");
+	FILE *fp1 = fopen("ACD.dat", "w");
 	
 	int i, times;
 	GLASS_SK sys;

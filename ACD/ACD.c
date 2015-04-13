@@ -244,7 +244,12 @@ void shake(GLASS_SK *sys, double Hs){
 
 	/* Generate a new list of sys.xi[] */
 	for(i = 0; i < sys->N; i++)
-		sys.xi[i] = ir1279()%2 * 2 - 1;
+		sys->xi[i] = ir1279()%2 * 2 - 1;
+	sys->H = Hs;
+	update_sys(sys);
+	identify_unstable(sys);
+
+	ac_demag(sys, Hs);
 }
 
 /****************************************************************************/

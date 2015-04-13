@@ -5,7 +5,7 @@
 
 // glassSK.h -- v.1.0 -- 04/12/2015 -- Longfei Fan
 
-# define SIZE 512
+# define SIZE 2048
 
 typedef struct{
 	int N;

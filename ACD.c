@@ -5,12 +5,11 @@
 
 // glassSK.c -- v.1.0 -- 04/12/2015 -- Longfei Fan
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <malloc.h>
-#include "glassSK.h"
+#include "ACD.h"
 #include "r1279.h"
 
 #define PI 3.14159265359

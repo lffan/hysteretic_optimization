@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "r1279.h"
-#include "ACD.h"
+#include "HO.h"
 
 #define INSTANCES 1000
 #define H0 1.6
@@ -22,35 +22,32 @@ int main(){
 	seed = seedgen();
 	setr1279(seed);
 
-	FILE *fp1 = fopen("ACD.dat", "w");
-	
 	int i, times;
 	GLASS_SK sys;
 	double cycle = 0;
 	double e, e2, m, m2;
 	double e_s = 0, e2_s = 0, m_s = 0, m2_s = 0;
 
+	FILE *fp1 = fopen("ACD.dat", "w");
 	fprintf(fp1, "# Energy\tEnergy^2\tMagnetic\tMagnet^2\tCycles\n");
+
 	for(i = 0; i < INSTANCES; i++){
-		/* Initialize one instance */
-		sys = init_sys();
-		/* Apply ac demagniztion procedure */
-		times = ac_demag(&sys, H0);
-		// printf("ACD done! Ustable spins: %d\n", sys.unstable_num);
-		/* Output the resutls */
-		e = sys.energy_stable/sys.N;
+		sys = init_sys();		/* Initialize one instance */
+		times = ac_demag(&sys, H0);		/* Apply ac demagniztion procedure */
+		
+		e = sys.energy_stable/sys.N;	/* Output the resutls */
 		e2 = pow(e, 2);
 		m = fabs(sys.magnetization/sys.N);
 		m2 = pow(m, 2);
 		fprintf(fp1, "%.6f\t%.6f\t%.6f\t%.6f\t%d\n", e, e2, m, m2, times);
-		/* Averaging */
-		cycle += times;
+		
+		cycle += times;		/* Averaging */
 		e_s += e;
 		e2_s += e2;
 		m_s += m;
 		m2_s += m2;
-		/* Free the space */
-		free_J(&sys);
+		
+		free_J(&sys);		/* Free the space */
 	}
 	fclose(fp1);
 

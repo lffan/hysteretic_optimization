@@ -4,7 +4,7 @@
 
 The Hamiltonian is given by
 $$
-E = - 1/2  \sum_{i, j}^{N}  J_{ij}  \sigma_i * \sigma_j - H \sum_{i}^{N} \xi_i * \sigma_i
+E = - 1/2  \sum_{i, j}^{N}  J_{ij}  \sigma_i \sigma_j - H \sum_{i}^{N} \xi_i \sigma_i
 $$
 The first term is the energy of the spin glass without the external field. The second term is the external demagnetizing field applied to minumize the energy. ki is the random direction of the field at each site i.
 
@@ -14,9 +14,9 @@ The aim of the optimization problem is to find the spin values $$$\sigma = \pm1$
 
 In SK model, each spin interact with all the others
 
-    - Jij = zij/sqrt(N),
+    - $ Jij = zij/\sqrt{N} $,
         where zij is a random Gaussian number with zero mean and unit variance.
-    - ki = +/- 1,
+    - $ki = \pm 1$,
         which is the direction of H randomly changed from site to site.
 
 ### 1.2 Edwards-Anderson Ising spin glass

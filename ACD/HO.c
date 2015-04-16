@@ -15,14 +15,38 @@
 /****************************************************************************/
 #define PI 3.14159265359
 
+// double gauss(){
+// 	// Gaussian number generator: <x> = 0, sigma = 1
+
+//     double u1, u2, x;
+//    	u1 = r1279();
+//    	u2 = r1279();
+// 	x = sqrt(-2*log(u2))*cos(2*PI*u1);
+// 	return x;
+// }
+
 double gauss(){
 	// Gaussian number generator: <x> = 0, sigma = 1
-
-    double u1, u2, x;
-   	u1 = r1279();
-   	u2 = r1279();
-	x = sqrt(-2*log(u2))*cos(2*PI*u1);
-	return x;
+    static int 		iset = 0;
+    static double 	gset;
+    double 	fac, rsq, v1, v2;
+    
+    if (iset == 0){
+	do {
+	    v1 = 2.0*r1279() - 1.0;
+	    v2 = 2.0*r1279() - 1.0;
+	    rsq = v1*v1 + v2*v2;
+	}
+	while (rsq >= 1.0 || rsq == 0.0);
+	fac = sqrt(-2.0*log(rsq)/rsq);
+	gset = v1*fac;
+	iset = 1;
+	return v2*fac;
+    }
+    else {
+	iset = 0;
+	return gset;
+    }
 }
 
 double rand_gamma(){

@@ -27,9 +27,10 @@ int main(){
 	double cycle = 0;
 	double e, e2, m, m2;
 	double e_s = 0, e2_s = 0, m_s = 0, m2_s = 0;
+	double e_std, m_std;
 
-	FILE *fp1 = fopen("ACD.dat", "w");
-	fprintf(fp1, "# Energy\tEnergy^2\tMagnetic\tMagnet^2\tCycles\n");
+	FILE *fp1 = fopen("acd_2048.dat", "w");
+	fprintf(fp1, "# Energy\tMagnetic\tCycles\n");
 
 	for(i = 0; i < INSTANCES; i++){
 		sys = init_sys();		/* Initialize one instance */
@@ -39,7 +40,7 @@ int main(){
 		e2 = pow(e, 2);
 		m = fabs(sys.magnetization/sys.N);
 		m2 = pow(m, 2);
-		fprintf(fp1, "%.6f\t%.6f\t%.6f\t%.6f\t%d\n", e, e2, m, m2, times);
+		fprintf(fp1, "%.6f\t%.6f\t%d\n", e, m, times);
 		
 		cycle += times;		/* Averaging */
 		e_s += e;
@@ -51,15 +52,17 @@ int main(){
 	}
 	fclose(fp1);
 
+	cycle /= INSTANCES;
 	e_s /= INSTANCES;
 	e2_s /= INSTANCES;
-	cycle /= INSTANCES;
+	e_std = sqrt(e2_s - pow(e_s, 2)) * sqrt(INSTANCES/(INSTANCES-1.));
 	m_s /= INSTANCES;
 	m2_s /= INSTANCES;
+	m_std = sqrt(m2_s - pow(m_s, 2)) * sqrt(INSTANCES/(INSTANCES-1.));
 
-	FILE *fp2 = fopen("ACD_ave.dat", "w");
-	fprintf(fp2, "# En_Ave\tEn2_Ave\t\tMag_Ave\t\tMag2_Ave\tCycles_Ave\n");
-	fprintf(fp2, "%.6f\t%.6f\t%.6f\t%.6f\t%f\n", e_s, e2_s, m_s, m2_s, cycle);
+	FILE *fp2 = fopen("acd_N.dat", "at");
+	// fprintf(fp2, "# SIZE\tInsts\tEn_ave\t\tEn_std\t\tMag_ave\t\tMag_std\t\tCycl_ave\n");
+	fprintf(fp2, "%4d\t%5d\t%.6f\t%.6f\t%.6f\t%.6f\t%f\n", SIZE, INSTANCES, e_s, e_std, m_s, m_std, cycle);
 	fclose(fp2);
 
 	return 0;

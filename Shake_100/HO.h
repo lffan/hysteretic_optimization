@@ -5,7 +5,7 @@
 
 // glassSK.h -- v.1.0 -- 04/12/2015 -- Longfei Fan
 
-# define SIZE 1024	/* number of spins */
+# define SIZE 32	/* number of spins */
 
 typedef struct{
 	// Sherrington-Kirkpatrick spin glass structure

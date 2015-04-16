@@ -15,7 +15,7 @@
 #include "r1279.h"
 #include "HO.h"
 
-#define INSTANCES 250
+#define INSTANCES 10000
 #define H0 1.6
 #define SHAKES 100
 #define HS 0.7
@@ -34,7 +34,7 @@ int main(){
 	double e, e2, m, m2;
 	double e_s = 0, e2_s = 0, m_s = 0, m2_s = 0;
 
-	FILE *fp1 = fopen("shake_100_1024.dat", "at");
+	FILE *fp1 = fopen("shake_100_32.dat", "at");
 	fprintf(fp1, "# Energy\tEnergy^2\tMagnetic\tMagnet^2\n");
 
 	for(i = 0; i < INSTANCES; i++){

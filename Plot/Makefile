@@ -1,29 +1,19 @@
 # plot file name
-NAME = plot
+NAME = Freq_ACD
 
 # set variables
-MACRO = plot.gp
-TEX	= gnuplot
+MACRO = Freq_ACD.gp
+EPS = plot-inc
+TEX = plot
 
 # make eps
-paper:
-
-	echo "\documentclass{article}" 		>  $(TEX).tex
-	echo "\usepackage{graphics}"		>> $(TEX).tex
-	echo "\usepackage[usenames]{color}" 	>> $(TEX).tex
-	echo "\uegin{document}" 		>> $(TEX).tex
-	echo "\uegin{center}" 			>> $(TEX).tex
-	echo "\input{./base.tex}" 		>> $(TEX).tex
-	echo "\end{center}" 			>> $(TEX).tex
-	echo "\end{document}" 			>> $(TEX).tex
-	perl -pi -e 's/uegin/begin/g' $(TEX).tex
-
+plot:
 	gnuplot $(MACRO)
-	latex 	$(TEX).tex
-	dvips	$(TEX).dvi -o $(TEX).ps
-	ps2pdf14  $(TEX).ps
-	mv      $(TEX).pdf $(NAME).pdf
-	/bin/rm	base.eps base.tex $(TEX).* 
+	epstopdf $(EPS).eps
+	pdflatex $(TEX).tex
+	
+	mv $(TEX).pdf $(NAME).pdf
+	rm -f $(EPS).pdf *.eps *.tex $(TEX).log *.aux
 
 # clean up!
 clean:

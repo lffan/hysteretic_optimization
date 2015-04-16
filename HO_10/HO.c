@@ -12,40 +12,7 @@
 #include "HO.h"
 #include "r1279.h"
 
-/****************************************************************************/
 #define PI 3.14159265359
-
-double gauss(){
-	// Gaussian number generator: <x> = 0, sigma = 1
-    static int 		iset = 0;
-    static double 	gset;
-    double 	fac, rsq, v1, v2;
-    
-    if (iset == 0){
-	do {
-	    v1 = 2.0*r1279() - 1.0;
-	    v2 = 2.0*r1279() - 1.0;
-	    rsq = v1*v1 + v2*v2;
-	}
-	while (rsq >= 1.0 || rsq == 0.0);
-	fac = sqrt(-2.0*log(rsq)/rsq);
-	gset = v1*fac;
-	iset = 1;
-	return v2*fac;
-    }
-    else {
-	iset = 0;
-	return gset;
-    }
-}
-
-double rand_gamma(){
-	// Return a random number in [0.8, 1.0]
-
-	double g;
-	g = 0.8 + 0.2 * r1279();
-	return g;
-}
 
 /****************************************************************************/
 GLASS_SK init_sys(){
@@ -267,6 +234,39 @@ void shake(GLASS_SK *sys, double Hs){
 int stop_check(){
 	// Check whether it is OK to stop shaking or not.
 
+}
+
+/****************************************************************************/
+double gauss(){
+	// Gaussian number generator: <x> = 0, sigma = 1
+    static int 		iset = 0;
+    static double 	gset;
+    double 	fac, rsq, v1, v2;
+    
+    if (iset == 0){
+	do {
+	    v1 = 2.0*r1279() - 1.0;
+	    v2 = 2.0*r1279() - 1.0;
+	    rsq = v1*v1 + v2*v2;
+	}
+	while (rsq >= 1.0 || rsq == 0.0);
+	fac = sqrt(-2.0*log(rsq)/rsq);
+	gset = v1*fac;
+	iset = 1;
+	return v2*fac;
+    }
+    else {
+	iset = 0;
+	return gset;
+    }
+}
+
+double rand_gamma(){
+	// Return a random number in [0.8, 1.0]
+
+	double g;
+	g = 0.8 + 0.2 * r1279();
+	return g;
 }
 
 /****************************************************************************/

@@ -15,9 +15,9 @@
 #include "r1279.h"
 #include "HO.h"
 
-#define INSTANCES 250
+#define INSTANCES 15000
 #define H0 1.6
-#define SHAKES 10
+#define SHAKES 100
 #define HS 0.7
 
 long seedgen(void);
@@ -33,9 +33,10 @@ int main(){
 	double cycle = 0;
 	double e, e2, m, m2;
 	double e_s = 0, e2_s = 0, m_s = 0, m2_s = 0;
+	double e_std, m_std;
 
-	FILE *fp1 = fopen("shake_10_2048.dat", "at");
-	fprintf(fp1, "# Energy\tEnergy^2\tMagnetic\tMagnet^2\n");
+	FILE *fp1 = fopen("HO_10_64.dat", "w");
+	fprintf(fp1, "# Energy\ttMagnetic\n");
 
 	for(i = 0; i < INSTANCES; i++){
 		sys = init_sys();		/* Initialize one instance */
@@ -47,7 +48,7 @@ int main(){
 		e2 = pow(e, 2);
 		m = fabs(sys.magnetization/sys.N);
 		m2 = pow(m, 2);
-		fprintf(fp1, "%.6f\t%.6f\t%.6f\t%.6f\n", e, e2, m, m2);
+		fprintf(fp1, "%.6f\t%.6f\n", e, m);
 		
 		e_s += e;		/* Summation */
 		e2_s += e2;
@@ -63,9 +64,12 @@ int main(){
 	cycle /= INSTANCES;
 	m_s /= INSTANCES;
 	m2_s /= INSTANCES;
+	e_std = sqrt(e2_s - pow(e_s, 2)) * sqrt(INSTANCES/(INSTANCES-1.));
+	m_std = sqrt(m2_s - pow(m_s, 2)) * sqrt(INSTANCES/(INSTANCES-1.));
 
-	FILE *fp2 = fopen("shake_10_2048_ave.dat", "at");
-	fprintf(fp2, "%4d\t%.6f\t%.6f\t%.6f\t%.6f\n", SIZE, e_s, e2_s, m_s, m2_s);
+	FILE *fp2 = fopen("HO_10_64_ave.dat", "w");
+	fprintf(fp2, "# SIZE\tInsts\tEn_ave\t\tEn_std\t\tMag_ave\t\tMag_std\n");
+	fprintf(fp2, "%4d\t%5d\t%.6f\t%.6f\t%.6f\t%.6f\n", SIZE, INSTANCES, e_s, e_std, m_s, m_std);
 	fclose(fp2);
 
 	return 0;

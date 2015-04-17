@@ -6,19 +6,19 @@ set key Left reverse
 #set grid back lc rgb "#000000"
 
 # styles for symbol plotting
-set style line  1 lt 1 lw 1 pt  7 ps 1.8 lc rgb "#FF0000"
-set style line  2 lt 1 lw 1 pt  5 ps 1.8 lc rgb "#2B65EC"
-set style line  3 lt 1 lw 1 pt  9 ps 1.8 lc rgb "#347235"
-set style line  4 lt 1 lw 1 pt 13 ps 1.8 lc rgb "#571B7E"
-set style line  5 lt 1 lw 1 pt 15 ps 1.8 lc rgb "#F88017"
-set style line  6 lt 1 lw 1 pt  7 ps 1.8 lc rgb "#B048B5"
+set style line  1 lt 1 lw 2 pt  7 ps 1.8 lc rgb "#FF0000"
+set style line  2 lt 1 lw 2 pt  5 ps 1.8 lc rgb "#2B65EC"
+set style line  3 lt 1 lw 2 pt  9 ps 1.8 lc rgb "#347235"
+set style line  4 lt 1 lw 2 pt 13 ps 1.8 lc rgb "#571B7E"
+set style line  5 lt 1 lw 2 pt 15 ps 1.8 lc rgb "#F88017"
+set style line  6 lt 1 lw 2 pt  7 ps 1.8 lc rgb "#B048B5"
 
 # styles for lines
-set style line 11 lt 1 lw 1 lc rgb "#FF0000"
-set style line 12 lt 1 lw 1 lc rgb "#2B65EC"
-set style line 13 lt 1 lw 1 lc rgb "#347235"
-set style line 14 lt 1 lw 1 lc rgb "#571B7E"
-set style line 15 lt 1 lw 1 lc rgb "#F88017"
+set style line 11 lt 1 lw 2 lc rgb "#FF0000"
+set style line 12 lt 1 lw 2 lc rgb "#2B65EC"
+set style line 13 lt 1 lw 2 lc rgb "#347235"
+set style line 14 lt 1 lw 2 lc rgb "#571B7E"
+set style line 15 lt 1 lw 2 lc rgb "#F88017"
 
 ##########################################################
 set xlabel '$E$'
@@ -40,9 +40,9 @@ nint(x)=(x>0.)?floor(x+0.5):ceil(x-0.5)
 bin(x,s)=s*nint(x/s)
 
 plot \
-'../Data_1/ACD_1024.dat' u (bin($1, 0.001)):(1.0) s f t 'ACD', \
-'../Data_1/HO_10_1024.dat' u (bin($1, 0.001)):(1.0) s f t 'HO 10', \
-'../Data_1/HO_100_1024.dat' u (bin($1, 0.0005)):(2.0) s f t 'HO 100', \
+'../Data/ACD_1024.dat' u (bin($1, 0.0005)):(1) s f t 'ACD' lw 2, \
+'../Data/HO_10_1024.dat' u (bin($1, 0.0005)):(2.0) s f t 'HO 10' lw 2, \
+'../Data/HO_100_1024.dat' u (bin($1, 0.0005)):(4.0) s f t 'HO 100' lw 2, \
 
 
 set output

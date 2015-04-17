@@ -1,14 +1,13 @@
 # plot file name
-NAME = Freq_ACD
+NAME = EvsN
 
 # set variables
-MACRO = Freq_ACD.gp
 EPS = plot-inc
 TEX = plot
 
 # make eps
 plot:
-	gnuplot $(MACRO)
+	gnuplot $(NAME).gp
 	epstopdf $(EPS).eps
 	pdflatex $(TEX).tex
 	

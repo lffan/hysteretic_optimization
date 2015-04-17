@@ -25,25 +25,25 @@ set xlabel '$E$'
 set ylabel 'Frequency'
 set format x "%.2f"
 #set format y "%.3f"
-set xrange [-0.77:-0.69]
+set xrange [-0.77:-0.72]
 #set yrange [0.98:1.02]
-set xtics 0.02
+set xtics 0.01
 #set logscale x
 #set logscale y
 
 set key at graph 0.9,0.9
 
-set label 1 "AC demagnetization" at graph 0.6,0.6
+set label 1 "Shake 10 times." at graph 0.6,0.6
 
 # frequency
 nint(x)=(x>0.)?floor(x+0.5):ceil(x-0.5)
 bin(x,s)=s*nint(x/s)
 
 plot \
-'../Data/ACD_256.dat' u (bin($1, 0.0005)):(0.2) s f t '$N = 256$' lw 2, \
-'../Data/ACD_512.dat' u (bin($1, 0.0005)):(0.5) s f t '$N = 512$' lw 2, \
-'../Data/ACD_1024.dat' u (bin($1, 0.0005)):(1.0) s f t '$N = 1024$' lw 2, \
-'../Data/ACD_2048.dat' u (bin($1, 0.0005)):(2.0) s f t '$N = 2048$' lw 2, \
+'../Data/HO_10_256.dat' u (bin($1, 0.0005)):(0.5) s f t '$N = 256$' lw 2, \
+'../Data/HO_10_512.dat' u (bin($1, 0.0005)):(1.) s f t '$N = 512$' lw 2, \
+'../Data/HO_10_1024.dat' u (bin($1, 0.0005)):(2.0) s f t '$N = 1024$' lw 2, \
+'../Data/HO_10_2048.dat' u (bin($1, 0.0005)):(2.0) s f t '$N = 2048$' lw 2, \
 
 
 set output

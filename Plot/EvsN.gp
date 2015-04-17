@@ -22,28 +22,30 @@ set style line  5 lt 1 lw 1 pt 15 ps 1.8 lc rgb "#F88017"
 set style line  6 lt 1 lw 1 pt  7 ps 1.8 lc rgb "#B048B5"
 
 # styles for lines
-set style line 11 lt 1 lw 1 lc rgb "#FF0000"
-set style line 12 lt 1 lw 1 lc rgb "#2B65EC"
-set style line 13 lt 1 lw 1 lc rgb "#347235"
-set style line 14 lt 1 lw 1 lc rgb "#571B7E"
-set style line 15 lt 1 lw 1 lc rgb "#F88017"
+set style line 11 lt 1 lw 2 lc rgb "#FF0000"
+set style line 12 lt 1 lw 2 lc rgb "#2B65EC"
+set style line 13 lt 1 lw 2 lc rgb "#347235"
+set style line 14 lt 1 lw 2 lc rgb "#571B7E"
+set style line 15 lt 1 lw 2 lc rgb "#F88017"
 
 # fit
 f(x) = E0 + a*x**(-w)
 
-fit f(x) '../Data_1/ACD_ave.dat' u 1:2 via E0,a,w
-set label 1 sprintf("$E_{ACD}=%.6f+%.3f N^{-%.3f} $", E0,a,w) at graph 0.35,0.7
+fit f(x) '../Data/ACD_ave.dat' u 1:3 via E0,a,w
+set label 1 sprintf("$%.6f+%.3f N^{-%.3f}$ - ACD", E0,a,w) at graph 0.35,0.70
 
-fit f(x) '../Data_1/shake_10_ave.dat' u 1:2 via E0,a,w
-set label 2 sprintf("$E_{HO_{10}}=%.6f+%.3f N^{-%.3f} $", E0,a,w) at graph 0.35,0.62
+fit f(x) '../Data/HO_10_ave.dat' u 1:3 via E0,a,w
+set label 2 sprintf("$%.6f+%.3f N^{-%.3f}$ - HO 10", E0,a,w) at graph 0.35,0.62
 
-fit f(x) '../Data_1/shake_100_ave.dat' u 1:2 via E0,a,w
-set label 3 sprintf("$E_{HO_{100}}=%.6f+%.3f N^{-%.3f} $", E0,a,w) at graph 0.35,0.54
+fit f(x) '../Data/HO_100_ave.dat' u 1:3 via E0,a,w
+set label 3 sprintf("$%.6f+%.3f N^{-%.3f}$ - HO 100", E0,a,w) at graph 0.35,0.54
 
 plot \
-'../Data_1/ACD_ave.dat' u 1:2 ls 1 t 'ACD' w lp, \
-'../Data_1/HO_10_ave.dat' u 1:2 ls 2 t 'HO 10' w lp, \
-'../Data_1/HO_100_ave.dat' u 1:2 ls 3 t 'HO 100' w lp
+-0.76321 + 0.76 * x ** (-2./3) ls 14 t 'Theoretical', \
+'../Data/ACD_ave.dat' u 1:3 ls 1 t 'ACD' w p, \
+'../Data/HO_10_ave.dat' u 1:3 ls 2 t 'HO 10' w p, \
+'../Data/HO_100_ave.dat' u 1:3 ls 3 t 'HO 100' w p, \
+
 
 
 set output

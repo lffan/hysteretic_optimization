@@ -1,43 +1,50 @@
 set term epslatex standalone lw 2 color 11
 set output "plot.tex"
 
-set key right top
-set key Left reverse
-set grid back lc rgb "#000000"
-
-# styles for symbol plotting
-set style line  1 lt 1 lw 1 pt  7 ps 1.8 lc rgb "#FF0000"
-set style line  2 lt 1 lw 1 pt  5 ps 1.8 lc rgb "#2B65EC"
-set style line  3 lt 1 lw 1 pt  9 ps 1.8 lc rgb "#347235"
-set style line  4 lt 1 lw 1 pt 13 ps 1.8 lc rgb "#571B7E"
-set style line  5 lt 1 lw 1 pt 15 ps 1.8 lc rgb "#F88017"
-set style line  6 lt 1 lw 1 pt  7 ps 1.8 lc rgb "#B048B5"
-
-# styles for lines
-set style line 11 lt 1 lw 1 lc rgb "#FF0000"
-set style line 12 lt 1 lw 1 lc rgb "#2B65EC"
-set style line 13 lt 1 lw 1 lc rgb "#347235"
-set style line 14 lt 1 lw 1 lc rgb "#571B7E"
-set style line 15 lt 1 lw 1 lc rgb "#F88017"
-
-##### Axes #################################################
+#--------------------------------------------------
 set xlabel '$N$'
-set ylabel '$\ln(\langle E \rangle_N - \langle E \rangle_{\infty})$'
-set xrange [24:2200]
-#set yrange [0.74:0.8]
+set ylabel '$\langle \sigma_E \rangle _N$'
+set xrange [30:2100]
+#set yrange [0.7:0.8]
 set logscale x
 #set logscale y
 
+set key right top
+set key Left reverse
+#set grid back lc rgb "#000000"
+
+# styles for symbol plotting
+set style line  1 lt 1 lw 2 pt  7 ps 1.8 lc rgb "#FF0000"
+set style line  2 lt 1 lw 2 pt  3 ps 1.8 lc rgb "#2B65EC"
+set style line  3 lt 1 lw 2 pt  9 ps 1.8 lc rgb "#347235"
+set style line  4 lt 1 lw 2 pt 13 ps 1.8 lc rgb "#571B7E"
+set style line  5 lt 1 lw 2 pt 15 ps 1.8 lc rgb "#F88017"
+set style line  6 lt 1 lw 2 pt  7 ps 1.8 lc rgb "#B048B5"
+
+# styles for lines
+set style line 11 lt 1 lw 2 lc rgb "#FF0000"
+set style line 12 lt 1 lw 2 lc rgb "#2B65EC"
+set style line 13 lt 1 lw 2 lc rgb "#347235"
+set style line 14 lt 1 lw 2 lc rgb "#571B7E"
+set style line 15 lt 1 lw 2 lc rgb "#F88017"
+
 # fit
-#f(x) = E0 + a*x**(-w)
-#fit f(x) '../Data_1/ACD_ave.dat' u 1:2 via E0,a,w
-#fit f(x) '../Data_1/shake_10_ave.dat' u 1:2 via E0,a,w
-#fit f(x) '../Data_1/shake_100_ave.dat' u 1:2 via E0,a,w
+f(x) = a*x**(-w)
+
+fit f(x) '../Data/ACD_ave.dat' u 1:4 via a,w
+set label 1 sprintf("$%.3f N^{-%.3f}$ - ACD", a,w) at graph 0.55,0.75
+
+fit f(x) '../Data/HO_10_ave.dat' u 1:4 via a,w
+set label 2 sprintf("$%.3f N^{-%.3f}$ - HO 10", a,w) at graph 0.55,0.67
+
+fit f(x) '../Data/HO_100_ave.dat' u 1:4 via a,w
+set label 3 sprintf("$%.3f N^{-%.3f}$ - HO 100", a,w) at graph 0.55,0.59
 
 plot \
-'../Data_1/ACD_ave.dat' u 1:(log($2 + 0.750782)) ls 1 t 'ACD' w lp, \
-'../Data_1/HO_10_ave.dat' u 1:(log($2 + 0.758032)) ls 2 t 'HO 10' w lp, \
-'../Data_1/HO_100_ave.dat' u 1:(log($2 + 0.761803)) ls 3 t 'HO 100' w lp
+'../Data/ACD_ave.dat' u 1:4 ls 1 t 'ACD' w p lw 2, \
+'../Data/HO_10_ave.dat' u 1:4 ls 2 t 'HO 10' w p lw 2, \
+'../Data/HO_100_ave.dat' u 1:4 ls 3 t 'HO 100' w p lw 2, \
+
 
 
 set output

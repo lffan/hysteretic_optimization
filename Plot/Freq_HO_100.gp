@@ -33,17 +33,17 @@ set xtics 0.01
 
 set key at graph 0.9,0.9
 
-set label 1 "Shake 10 times." at graph 0.6,0.6
+set label 1 "Shake 100 times" at graph 0.6,0.6
 
 # frequency
 nint(x)=(x>0.)?floor(x+0.5):ceil(x-0.5)
 bin(x,s)=s*nint(x/s)
 
 plot \
-'../Data_1/HO_10_256.dat' u (bin($1, 0.001)):(1.0) s f t '$N = 256$', \
-'../Data_1/HO_10_512.dat' u (bin($1, 0.001)):(1.0) s f t '$N = 512$', \
-'../Data_1/HO_10_1024.dat' u (bin($1, 0.001)):(1.0) s f t '$N = 1024$', \
-'../Data_1/HO_10_2048.dat' u (bin($1, 0.001)):(2.0) s f t '$N = 2048$', \
+'../Data/HO_100_256.dat' u (bin($1, 0.0005)):(1.0) s f t '$N = 256$' lw 2, \
+'../Data/HO_100_512.dat' u (bin($1, 0.0005)):(2.0) s f t '$N = 512$' lw 2, \
+'../Data/HO_100_1024.dat' u (bin($1, 0.0005)):(4.0) s f t '$N = 1024$' lw 2, \
+#'../Data/HO_100_2048.dat' u (bin($1, 0.001)):(2.0) s f t '$N = 2048$' lw 2, \
 
 
 set output

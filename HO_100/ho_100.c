@@ -15,9 +15,9 @@
 #include "r1279.h"
 #include "HO.h"
 
-#define INSTANCES 1
+#define INSTANCES 5
 #define H0 1.6
-#define SHAKES 100
+#define SHAKES 500
 #define HS 0.7
 
 long seedgen(void);
@@ -37,7 +37,7 @@ int main(){
 
 	printf("SIZE: %d\n", SIZE);
 
-	FILE *fp1 = fopen("HO_100_2048_test.dat", "w");
+	FILE *fp1 = fopen("HO_100_512_test.dat", "w");
 	fprintf(fp1, "# Energy\ttMagnetic\n");
 
 	for(i = 0; i < INSTANCES; i++){
@@ -69,7 +69,7 @@ int main(){
 	e_std = sqrt(e2_s - pow(e_s, 2)) * sqrt(INSTANCES/(INSTANCES-1.));
 	m_std = sqrt(m2_s - pow(m_s, 2)) * sqrt(INSTANCES/(INSTANCES-1.));
 
-	FILE *fp2 = fopen("HO_100_2048_ave_test.dat", "w");
+	FILE *fp2 = fopen("HO_100_512_ave_test.dat", "w");
 	fprintf(fp2, "# SIZE\tInsts\tEn_ave\t\tEn_std\t\tMag_ave\t\tMag_std\n");
 	fprintf(fp2, "%4d\t%5d\t%.6f\t%.6f\t%.6f\t%.6f\n", SIZE, INSTANCES, e_s, e_std, m_s, m_std);
 	fclose(fp2);

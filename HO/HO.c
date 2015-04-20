@@ -3,7 +3,7 @@
 /*	  		Hysteretic optimization for Sherrington-Kirkpatrick model		*/
 /****************************************************************************/
 
-// glassSK.c -- v.1.0 -- 04/12/2015 -- Longfei Fan
+// HO.c -- v.1.2 -- 04/17/2015 -- Longfei Fan
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,40 +12,7 @@
 #include "HO.h"
 #include "r1279.h"
 
-/****************************************************************************/
 #define PI 3.14159265359
-
-double gauss(){
-	// Gaussian number generator: <x> = 0, sigma = 1
-    static int 		iset = 0;
-    static double 	gset;
-    double 	fac, rsq, v1, v2;
-    
-    if (iset == 0){
-	do {
-	    v1 = 2.0*r1279() - 1.0;
-	    v2 = 2.0*r1279() - 1.0;
-	    rsq = v1*v1 + v2*v2;
-	}
-	while (rsq >= 1.0 || rsq == 0.0);
-	fac = sqrt(-2.0*log(rsq)/rsq);
-	gset = v1*fac;
-	iset = 1;
-	return v2*fac;
-    }
-    else {
-	iset = 0;
-	return gset;
-    }
-}
-
-double rand_gamma(){
-	// Return a random number in [0.8, 1.0]
-
-	double g;
-	g = 0.8 + 0.2 * r1279();
-	return g;
-}
 
 /****************************************************************************/
 GLASS_SK init_sys(){
@@ -130,9 +97,9 @@ void identify_unstable(GLASS_SK *sys){
 			sys->unstable_num += 1;
 		}
 	}
-	for(i = sys->unstable_num; i < sys->N; i++){
-		sys->unstable[i] = -1;
-	}
+	// for(i = sys->unstable_num; i < sys->N; i++){
+	// 	sys->unstable[i] = -1;
+	// }
 }
 
 /****************************************************************************/
@@ -142,7 +109,7 @@ void flip_spin(GLASS_SK *sys, int s){
 	// that is to say, sys.sigma[], sys.energy, sys.magnetization, and sys.h[]
 
 	sys->sigma[s] = - sys->sigma[s];
-	sys->magnetization += 2 * sys->xi[s] * sys->sigma[s];
+	// sys->magnetization += 2 * sys->xi[s] * sys->sigma[s];
 	sys->energy -= 2 * sys->h[s] * sys->sigma[s];
 	int i;
 	for(i = 0; i < sys->N; i++)
@@ -173,10 +140,14 @@ void decrease_H(GLASS_SK *sys, double delta){
 	/* Decrease the external field by delta, and update the system */
 
 	int i;
+	double deltaxi;
 	sys->H -= delta;
-	sys->energy += delta * sys->magnetization;
-		for(i = 0; i < sys->N; i++)
-		sys->h[i] -= delta * sys->xi[i];
+	// sys->energy += delta * sys->magnetization;
+	for(i = 0; i < sys->N; i++){
+		deltaxi = delta * sys->xi[i]; 
+		sys->h[i] -= deltaxi;
+		sys->energy += deltaxi * sys->sigma[i];
+	}
 }
 
 /****************************************************************************/
@@ -189,11 +160,11 @@ int half_cycle(GLASS_SK *sys, double H1, double H2){
 	double delta;
 
 	/* Quench at H1 */
-	delta = H1 / 20.0;
+	delta = H1 / 40.0;
 	sys->H = H1;
 	update_sys(sys);	/* Calibrate the status of the system */
 	quench_time += quench(sys);
-	for(i = 1; i < 20; i++){
+	for(i = 1; i < 40; i++){
 		decrease_H(sys, delta);
 		quench_time += quench(sys);
 	}
@@ -210,8 +181,8 @@ int half_cycle(GLASS_SK *sys, double H1, double H2){
 	}
 
 	/* Quench from 0 to H2 */
-	delta = - H2 / 20.0;
-	for(i = 0; i < 20; i++){
+	delta = - H2 / 40.0;
+	for(i = 0; i < 40; i++){
 		decrease_H(sys, delta);
 		quench_time += quench(sys);
 	}
@@ -241,9 +212,9 @@ int ac_demag(GLASS_SK *sys, double H){
 	update_sys(sys);
 	identify_unstable(sys);
 	/* Calculate the magnetization with no xi[i] factors */
-	sys->magnetization = 0;
-	for(i = 0; i < sys->N; i++)
-		sys->magnetization += sys->sigma[i];
+	// sys->magnetization = 0;
+	// for(i = 0; i < sys->N; i++)
+	// 	sys->magnetization += sys->sigma[i];
 
 	return cycle_time;
 }
@@ -263,10 +234,38 @@ void shake(GLASS_SK *sys, double Hs){
 	ac_demag(sys, Hs);
 }
 
-/****************************************************************************/
-int stop_check(){
-	// Check whether it is OK to stop shaking or not.
 
+/****************************************************************************/
+double gauss(){
+	// Gaussian number generator: <x> = 0, sigma = 1
+    static int 		iset = 0;
+    static double 	gset;
+    double 	fac, rsq, v1, v2;
+    
+    if (iset == 0){
+	do {
+	    v1 = 2.0*r1279() - 1.0;
+	    v2 = 2.0*r1279() - 1.0;
+	    rsq = v1*v1 + v2*v2;
+	}
+	while (rsq >= 1.0 || rsq == 0.0);
+	fac = sqrt(-2.0*log(rsq)/rsq);
+	gset = v1*fac;
+	iset = 1;
+	return v2*fac;
+    }
+    else {
+	iset = 0;
+	return gset;
+    }
+}
+
+double rand_gamma(){
+	// Return a random number in [0.8, 1.0]
+
+	double g;
+	g = 0.8 + 0.2 * r1279();
+	return g;
 }
 
 /****************************************************************************/

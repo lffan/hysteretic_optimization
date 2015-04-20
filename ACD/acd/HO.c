@@ -13,51 +13,6 @@
 #include "r1279.h"
 
 /****************************************************************************/
-#define PI 3.14159265359
-
-// double gauss(){
-// 	// Gaussian number generator: <x> = 0, sigma = 1
-
-//     double u1, u2, x;
-//    	u1 = r1279();
-//    	u2 = r1279();
-// 	x = sqrt(-2*log(u2))*cos(2*PI*u1);
-// 	return x;
-// }
-
-double gauss(){
-	// Gaussian number generator: <x> = 0, sigma = 1
-    static int 		iset = 0;
-    static double 	gset;
-    double 	fac, rsq, v1, v2;
-    
-    if (iset == 0){
-	do {
-	    v1 = 2.0*r1279() - 1.0;
-	    v2 = 2.0*r1279() - 1.0;
-	    rsq = v1*v1 + v2*v2;
-	}
-	while (rsq >= 1.0 || rsq == 0.0);
-	fac = sqrt(-2.0*log(rsq)/rsq);
-	gset = v1*fac;
-	iset = 1;
-	return v2*fac;
-    }
-    else {
-	iset = 0;
-	return gset;
-    }
-}
-
-double rand_gamma(){
-	// Return a random number in [0.8, 1.0]
-
-	double g;
-	g = 0.8 + 0.2 * r1279();
-	return g;
-}
-
-/****************************************************************************/
 GLASS_SK init_sys(){
 	// Initialize the Sherrington-Kirkpatrick spin glass system.
 	// Return an initialized GLASS_SK structure.
@@ -206,12 +161,19 @@ int half_cycle(GLASS_SK *sys, double H1, double H2){
 	for(i = 1; i < 20; i++){
 		decrease_H(sys, delta);
 		quench_time += quench(sys);
+		printf("%.6f\t", sys->energy/sys->N);
+		printf("%.6f\t", sys->H/sys->N);
+		printf("%.6f\n", sys->magnetization/sys->N);
 	}
 
 	/* Quench at 0 */
 	sys->H = 0;
 	update_sys(sys);
 	quench_time += quench(sys);
+	printf("%.6f\t", sys->energy/sys->N);
+	printf("%.6f\t", sys->H/sys->N);
+	printf("%.6f\n", sys->magnetization/sys->N);
+
 	/* Check the best configuration */
 	if(sys->energy_stable > sys->energy){
 		sys->energy_stable = sys->energy;
@@ -219,11 +181,16 @@ int half_cycle(GLASS_SK *sys, double H1, double H2){
 			sys->sigma_best[i] = sys->sigma[i];
 	}
 
+	/* Print current best configuration */
+
 	/* Quench from 0 to H2 */
 	delta = - H2 / 20.0;
 	for(i = 0; i < 20; i++){
 		decrease_H(sys, delta);
 		quench_time += quench(sys);
+		printf("%.6f\t", sys->energy/sys->N);
+		printf("%.6f\t", sys->H/sys->N);
+		printf("%.6f\n", sys->magnetization/sys->N);
 	}
 
 	return quench_time;
@@ -250,6 +217,7 @@ int ac_demag(GLASS_SK *sys, double H){
 	sys->H = 0;
 	update_sys(sys);
 	identify_unstable(sys);
+
 	/* Calculate the magnetization with no xi[i] factors */
 	sys->magnetization = 0;
 	for(i = 0; i < sys->N; i++)
@@ -275,6 +243,42 @@ void shake(GLASS_SK *sys, double Hs){
 
 	ac_demag(sys, Hs);
 }
+
+/****************************************************************************/
+#define PI 3.14159265359
+
+double gauss(){
+	// Gaussian number generator: <x> = 0, sigma = 1
+    static int 		iset = 0;
+    static double 	gset;
+    double 	fac, rsq, v1, v2;
+    
+    if (iset == 0){
+	do {
+	    v1 = 2.0*r1279() - 1.0;
+	    v2 = 2.0*r1279() - 1.0;
+	    rsq = v1*v1 + v2*v2;
+	}
+	while (rsq >= 1.0 || rsq == 0.0);
+	fac = sqrt(-2.0*log(rsq)/rsq);
+	gset = v1*fac;
+	iset = 1;
+	return v2*fac;
+    }
+    else {
+	iset = 0;
+	return gset;
+    }
+}
+
+double rand_gamma(){
+	// Return a random number in [0.8, 1.0]
+
+	double g;
+	g = 0.8 + 0.2 * r1279();
+	return g;
+}
+
 
 /****************************************************************************/
 void print_system_status(GLASS_SK *sys){

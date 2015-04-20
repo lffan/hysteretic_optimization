@@ -12,8 +12,6 @@
 #include "HO.h"
 #include "r1279.h"
 
-#define PI 3.14159265359
-
 /****************************************************************************/
 GLASS_SK init_sys(){
 	// Initialize the Sherrington-Kirkpatrick spin glass system.
@@ -27,7 +25,8 @@ GLASS_SK init_sys(){
 	int i, j;
 	/* Initialize sys.sigma, sys.xi */
 	for(i = 0; i < sys.N; i++){
-		sys.sigma[i] = sys.xi[i] = ir1279()%2 * 2 - 1;
+		sys.sigma[i] = 1;
+		sys.xi[i] = ir1279()%2 * 2 - 1;
 	}
 
 	/* Initialize sys.J: allocate memory and asign values */
@@ -41,6 +40,7 @@ GLASS_SK init_sys(){
 	}
 
 	sys.H = 0;
+	sys.energy_stable = 0;
 	update_sys(&sys);
 	identify_unstable(&sys);
 
@@ -163,24 +163,35 @@ int half_cycle(GLASS_SK *sys, double H1, double H2){
 	for(i = 1; i < 20; i++){
 		decrease_H(sys, delta);
 		quench_time += quench(sys);
+		// printf("%.6f\t", (sys->energy+sys->H*sys->magnetization)/sys->N);
+		// printf("%.6f\t%.6f\n", sys->H, sys->magnetization/sys->N);
 	}
 
 	/* Quench at 0 */
 	sys->H = 0;
 	update_sys(sys);
 	quench_time += quench(sys);
+	// printf("%.6f\t", (sys->energy+sys->H*sys->magnetization)/sys->N);
+	// printf("%.6f\t%.6f\n", sys->H, sys->magnetization/sys->N);
+
+
 	/* Check the best configuration */
 	if(sys->energy_stable > sys->energy){
 		sys->energy_stable = sys->energy;
 		for(i = 0; i < sys->N; i++)
 			sys->sigma_best[i] = sys->sigma[i];
 	}
+	// FILE *cycle = fopen("energy.dat", "at");
+	// fprintf(cycle, "%.6f\t%.6f\n", sys->energy_stable/sys->N, sys->energy/sys->N);
+	// fclose(cycle);
 
 	/* Quench from 0 to H2 */
 	delta = - H2 / 20.0;
 	for(i = 0; i < 20; i++){
 		decrease_H(sys, delta);
 		quench_time += quench(sys);
+		// printf("%.6f\t", (sys->energy+sys->H*sys->magnetization)/sys->N);
+		// printf("%.6f\t%.6f\n", sys->H, sys->magnetization/sys->N);
 	}
 
 	return quench_time;
@@ -207,6 +218,7 @@ int ac_demag(GLASS_SK *sys, double H){
 	sys->H = 0;
 	update_sys(sys);
 	identify_unstable(sys);
+
 	/* Calculate the magnetization with no xi[i] factors */
 	sys->magnetization = 0;
 	for(i = 0; i < sys->N; i++)
@@ -226,17 +238,16 @@ void shake(GLASS_SK *sys, double Hs){
 	/* Generate a new list of sys.xi[] */
 	for(i = 0; i < sys->N; i++)
 		sys->xi[i] = ir1279()%2 * 2 - 1;
-	/* ac demagnetization */
+	sys->H = Hs;
+	update_sys(sys);
+	identify_unstable(sys);
+
 	ac_demag(sys, Hs);
 }
 
 /****************************************************************************/
-int stop_check(){
-	// Check whether it is OK to stop shaking or not.
+#define PI 3.14159265359
 
-}
-
-/****************************************************************************/
 double gauss(){
 	// Gaussian number generator: <x> = 0, sigma = 1
     static int 		iset = 0;
@@ -268,6 +279,7 @@ double rand_gamma(){
 	g = 0.8 + 0.2 * r1279();
 	return g;
 }
+
 
 /****************************************************************************/
 void print_system_status(GLASS_SK *sys){

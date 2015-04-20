@@ -1,0 +1,12 @@
+#PBS -l nodes=1:ppn=8,mem=4gb,walltime=24:00:00
+#PBS -N HO512
+#PBS -m e
+#PBS -q medium
+#PBS -M physflf@gmail.com
+#PBS -j oe
+
+export OMP_NUM_THREADS=8
+cd $PBS_O_WORKDIR
+
+time ./HO512
+time ./HO256

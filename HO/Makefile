@@ -1,5 +1,5 @@
 # set executable name
-EXECNAME    = TEST2048
+EXECNAME    = HO1024
 
 # default compiler settings
 CC          =  gcc
